@@ -1,0 +1,104 @@
+.custom-navbar {
+  width: 100%;
+  justify-content: space-between;
+  display: flex;
+  background: var(--color-black);
+  padding: 1rem 3rem;
+  align-items: center;
+}
+
+.custom-navbar-logo {
+  align-items: center;
+  justify-content: flex-start;
+  display: flex;
+}
+
+.custom-navbar-logo img {
+  width: 170px;
+}
+
+.custom-navbar-links {
+  list-style: none;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+}
+
+.custom-navbar-links li {
+  cursor: pointer;
+  margin: 0 2rem;
+}
+
+.custom-navbar-links li:hover {
+  color: var(--color-grey);
+}
+
+.custom-navbar-smallscreen {
+  display: none;
+}
+
+.custom-navbar-smallscreen-overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  transition: 0.5s ease;
+  background: var(--color-black);
+  z-index: 5;
+  flex-direction: column;
+}
+
+.custom-navbar-smallscreen-overlay .overlay-close {
+  font-size: 30px;
+  color: var(--color-gold);
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+.custom-navbar-smallscreen-links {
+  list-style: none;
+}
+
+.custom-navbar-smallscreen-links li {
+  margin: 5rem;
+  color: var(--color-gold);
+  cursor: pointer;
+  text-align: center;
+  font-size: 2rem;
+  font-family: var(--font1);
+}
+
+.custom-navbar-smallscreen-links li:hover {
+  color: var(--color-light);
+}
+
+/* @media screen and (min-width: 2000px) {
+  .custom-navbar-logo img {
+    width: 210px;
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  .custom-navbar-links {
+    display: none;
+  }
+
+  .custom-navbar-smallscreen {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .custom-navbar {
+    padding: 1rem;
+  }
+
+  .custom-navbar-logo img {
+    width: 140px;
+    margin-left: 1rem;
+  }
+} */
