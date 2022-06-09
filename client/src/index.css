@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Allerta+Stencil&family=DM+Sans&family=Jura&family=Luxurious+Roman&family=Open+Sans:wght@300&family=Raleway:wght@100;300;500&family=Roboto:wght@100;300&display=swap");
+
+:root {
+  --font1: "Allerta Stencil";
+  --font2: "Open Sans", sans-serif;
+
+  --color-black: #0c0c0c;
+  --color-gold: #dcca87;
+  --color-darkgrey: #5e5d5d;
+  --color-cream: #f5efdb;
+  --color-grey: #aaaaaa;
+  --color-light: #ffffff;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+.sliding {
+  -webkit-animation: sliding 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: sliding 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@-webkit-keyframes sliding {
+  0% {
+    -webkit-transform: translateY(-25%);
+    transform: translateY(-25%);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes sliding {
+  0% {
+    -webkit-transform: translateY(-25%);
+    transform: translateY(-25%);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
