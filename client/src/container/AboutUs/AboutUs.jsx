@@ -26,9 +26,9 @@ const AboutUs = () => (
         </button>
       </div>
 
-      {/* <div className="custom-aboutus-content-light custom-flex-center">
+      <div className="custom-aboutus-content-light custom-flex-center">
         <img src={light} alt="about-light" />
-      </div> */}
+      </div>
 
       {/* <div className="custom-aboutus-content-create">
         <h1 className="desc-text">Create Events</h1>
