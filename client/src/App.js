@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Navbar } from './components';
-import { Header, AboutUs, Intro } from './container';
+import { Header, AboutUs, Intro , Slides} from './container';
 
 import './App.css';
 
@@ -11,6 +11,7 @@ const App = () => (
     <Header />
     <AboutUs />
     <Intro />
+    <Slides />
   </div>
 );
 
