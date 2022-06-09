@@ -26,7 +26,7 @@ const Slides = () => {
 
   return (
     <div className="custom-event custom-flex-center">
-      {/* <div className="custom-event-content">
+      <div className="custom-event-content">
         <div style={{ marginBottom: "1.5rem" }}>
           <p className="subtitle">Instagram</p>
           <img src={arrow} alt="arrow" className="arrow-img" />
@@ -42,7 +42,7 @@ const Slides = () => {
         <button type="button" className="custom-btn">
           View More
         </button>
-      </div> */}
+      </div>
       <div className="custom-event-img">
         <div className="custom-event-pic-container" ref={scrollingRef}>
            <div
