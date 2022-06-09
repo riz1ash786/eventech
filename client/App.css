@@ -108,7 +108,7 @@
   margin-bottom: 30px;
 }
 
-/* @media screen and (min-width: 2000px) {
+@media screen and (min-width: 2000px) {
   .custom-btn,
   .subtitle {
     line-height: 67px;
@@ -177,4 +177,4 @@
     font-size: 45px;
     line-height: 70px;
   }
-} */
+}
