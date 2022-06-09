@@ -93,7 +93,7 @@
   color: var(--color-light);
 }
 
-/* @media screen and (min-width: 2000px) {
+@media screen and (min-width: 2000px) {
   .custom-event-content {
     min-width: 1000px;
     padding-right: 4rem;
@@ -139,4 +139,4 @@
     min-width: 240px;
     height: 320px;
   }
-} */
+}
