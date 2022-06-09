@@ -30,7 +30,7 @@ const AboutUs = () => (
         <img src={light} alt="about-light" />
       </div>
 
-      {/* <div className="custom-aboutus-content-create">
+      <div className="custom-aboutus-content-create">
         <h1 className="desc-text">Create Events</h1>
         <img src={arrow} alt="arrow" className="arrow-img" />
         <p className="small-parag">
@@ -40,7 +40,7 @@ const AboutUs = () => (
         <button type="button" className="custom-btn">
           Add Event
         </button>
-      </div> */}
+      </div>
     </div>
   </div>
 );
