@@ -18,7 +18,7 @@ const Intro = () => {
         muted
       />
 
-      {/* <div className="custom-mp4-overlay custom-flex-center">
+      <div className="custom-mp4-overlay custom-flex-center">
         <div
           className="custom-mp4-overlay-circle custom-flex-center"
           onClick={() => {
@@ -34,7 +34,7 @@ const Intro = () => {
             <BsPauseFill color="#fff" fontSize={40} />
           ) : (
             <BsFillPlayFill color="#fff" fontSize={40} />
-          )} */}
+          )}
         </div>
       </div>
     </div>
