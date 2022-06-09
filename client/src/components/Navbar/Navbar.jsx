@@ -28,7 +28,7 @@ const Navbar = () => {
         </li>
       </ul>
       {/* Navbar for small Screens */}
-      {/* <div className="custom-navbar-smallscreen">
+      <div className="custom-navbar-smallscreen">
         <GiHamburgerMenu
           color="#fff"
           fontSize={27}
@@ -64,7 +64,7 @@ const Navbar = () => {
             </ul>
           </div>
         )}
-      </div> */}
+      </div>
     </nav>
   );
 };
