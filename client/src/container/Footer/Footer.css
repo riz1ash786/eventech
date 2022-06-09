@@ -85,7 +85,7 @@
   }
 }
 
-/* @media screen and (max-width: 650px) {
+@media screen and (max-width: 650px) {
   .custom-footer {
     padding: 0 0 2rem 0;
   }
@@ -95,4 +95,4 @@
   .custom-footer-links-logo img:first-child {
     width: 80%;
   }
-} */
+}
