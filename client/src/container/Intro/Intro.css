@@ -1,0 +1,24 @@
+.custom-mp4 {
+  position: relative;
+  height: 100vh;
+}
+
+.custom-mp4 video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.custom-mp4-overlay {
+  inset: 0;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.64);
+}
+
+.custom-mp4-overlay-circle {
+  cursor: pointer;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  border: 1px solid var(--color-gold);
+}

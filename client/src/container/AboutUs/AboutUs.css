@@ -1,0 +1,80 @@
+.custom-aboutus {
+    position: relative;
+}
+
+.custom-aboutus-overlay {
+    inset: 0;
+    position: absolute;
+}
+
+.custom-aboutus-overlay img{
+    z-index: 0;
+    width: 392px;
+    height: 416px;
+}
+
+.custom-aboutus-content {
+    z-index: 2;
+    width: 100%;
+}
+
+.custom-aboutus-content-about {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-direction: column;
+    text-align: right;
+}
+
+.custom-aboutus-content-light {
+    margin: 2rem 4rem;
+}
+
+.custom-aboutus-content-light img {
+    height: 710px;
+}
+
+.custom-aboutus-content-create {
+    flex: 1;
+    text-align: left;
+    justify-content: flex-start;
+    display: flex; 
+    align-items: flex-start;
+    flex-direction: column;
+
+}
+
+.custom-aboutus-content-about p,
+.custom-aboutus-content-create p {
+    margin: 2rem 0;
+    color: var(--color-grey);
+}
+
+@media screen and (min-width: 2000px) {
+    .custom-aboutus-content-light img {
+        height: 1110px;
+    }
+
+    .custom-aboutus-content-about p,
+    .custom-aboutus-content-create p {
+        margin: 4rem 0;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .custom-aboutus-content {
+        flex-direction: column;
+    }
+
+    .custom-aboutus-content-light {
+        margin: 4rem 0;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .custom-aboutus-overlay img {
+        width: 80%;
+        height: 320px;
+    }
+}

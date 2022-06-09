@@ -1,15 +1,19 @@
 import React from 'react';
 
+import { Navbar } from './components';
+import { Header, AboutUs, Intro , Slides,  Footer} from './container';
 
+import './App.css';
 
-
-function App() {
-  return (
-    <div>
-      <h1>App</h1>
-    </div>
-  );
-}
-
+const App = () => (
+  <div>
+    <Navbar />
+    <Header />
+    <AboutUs />
+    <Intro />
+    <Slides />
+    <Footer />
+  </div>
+);
 
 export default App;
