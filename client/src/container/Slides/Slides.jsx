@@ -78,7 +78,7 @@ const Slides = () => {
             </div>
         </div>
 
-        {/* <div className="custom-event-pic-arrows">
+        <div className="custom-event-pic-arrows">
         <BsArrowRightShort
             className="event-arrows"
             onClick={() => scroll("right")}
@@ -88,7 +88,7 @@ const Slides = () => {
             onClick={() => scroll("left")}
           />
       
-        </div> */}
+        </div>
       </div>
     </div>
   );
