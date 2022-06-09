@@ -21,9 +21,9 @@ const Header = () => (
       </button>
     </div>
 
-    {/* <div className="img-wrap">
+    <div className="img-wrap">
       <img src={conference} alt="header_img" />
-    </div> */}
+    </div>
   </div>
 );
 
