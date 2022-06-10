@@ -41,10 +41,10 @@ const App = () => {
       <Router>
           <Navbar />
             <Routes>
-              <Route 
+              {/* <Route 
                 path="*" 
                 element={<Home />} 
-              />
+              /> */}
             </Routes>
           <Footer />
       </Router>
