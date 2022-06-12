@@ -1,10 +1,10 @@
-const { AuthenticationError } = require('apollo-server-express');
-const { Profile } = require('../models');
-const { Event } = require('../models');
-const { Location } = require('../models');
-const {Interested} = require('../models');
+const { AuthenticationError } = require("apollo-server-express");
+const { Profile } = require("../models");
+const { Event } = require("../models");
+const { Location } = require("../models");
+const { Interested } = require("../models");
 
-const { signToken } = require('../utils/auth');
+const { signToken } = require("../utils/auth");
 
 const resolvers = {
   Query: {
@@ -12,7 +12,7 @@ const resolvers = {
       return Profile.find().populate({
         path: "allinterested.events",
         populate: "location",
-      })
+      });
     },
 
     profile: async (parent, { profileId }) => {
@@ -27,12 +27,12 @@ const resolvers = {
         return Profile.findOne({ _id: context.user._id }).populate({
           path: "allinterested.events",
           populate: "location",
-        });;
+        });
       }
-      throw new AuthenticationError('You need to be logged in!');
+      throw new AuthenticationError("You need to be logged in!");
     },
     events: async () => {
-     return Event.find().populate("location");
+      return Event.find().populate("location");
     },
     event: async (parent, { _id }) => {
       return await Event.findById(_id).populate("location");
@@ -78,39 +78,37 @@ const resolvers = {
       const profile = await Profile.findOne({ email });
 
       if (!profile) {
-        throw new AuthenticationError('No profile with this email found!');
+        throw new AuthenticationError("No profile with this email found!");
       }
 
       const correctPw = await profile.isCorrectPassword(password);
 
       if (!correctPw) {
-        throw new AuthenticationError('Incorrect password!');
+        throw new AuthenticationError("Incorrect password!");
       }
 
       const token = signToken(profile);
       return { token, profile };
     },
 
+    // Set up mutation so a logged in user can only remove their profile and no one else's
+    removeProfile: async (parent, args, context) => {
+      if (context.user) {
+        return Profile.findOneAndDelete({ _id: context.user._id });
+      }
+      throw new AuthenticationError("You need to be logged in!");
+    },
 
-//     // Set up mutation so a logged in user can only remove their profile and no one else's
-//     removeProfile: async (parent, args, context) => {
-//       if (context.user) {
-//         return Profile.findOneAndDelete({ _id: context.user._id });
-//       }
-//       throw new AuthenticationError('You need to be logged in!');
-//     },
+    updateEvent: async (parent, { _id, quantity }) => {
+      const decrement = Math.abs(quantity) * -1;
 
-//     updateEvent: async (parent, { _id, quantity }) => {
-//       const decrement = Math.abs(quantity) * -1;
+      return await Event.findByIdAndUpdate(
+        _id,
+        { $inc: { quantity: decrement } },
+        { new: true }
+      );
+    },
+  },
+};
 
-//       return await Event.findByIdAndUpdate(
-//         _id,
-//         { $inc: { quantity: decrement } },
-//         { new: true }
-//       );
-//     },
-
-//   },
-// };
-
-// module.exports = resolvers;
+module.exports = resolvers;
