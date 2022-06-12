@@ -37,24 +37,24 @@ const resolvers = {
     event: async (parent, { _id }) => {
       return await Event.findById(_id).populate("location");
     },
-//     locations: async () => {
-//       return await Location.find();
-//     },
-//     eventsByLocation: async (parent, { location, name }) => {
-//       const params = {};
+    locations: async () => {
+      return await Location.find();
+    },
+    eventsByLocation: async (parent, { location, name }) => {
+      const params = {};
 
-//       if (location) {
-//         params.location = location;
-//       }
+      if (location) {
+        params.location = location;
+      }
 
-//       if (name) {
-//         params.name = {
-//           $regex: name,
-//         };
-//       }
+      if (name) {
+        params.name = {
+          $regex: name,
+        };
+      }
 
-//       return await Event.find(params).populate("location");
-//     },
+      return await Event.find(params).populate("location");
+    },
 //     interested: async (parent, { _id }, context) => {
 //       if (context.user) {
 //         const profile = await Profile.findById(context.profile._id).populate({
