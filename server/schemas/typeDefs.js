@@ -27,10 +27,10 @@ const typeDefs = gql`
     price: Float
     location: Location
   }
-//   type Auth {
-//     token: ID!
-//     profile: Profile
-//   }
+  type Auth {
+    token: ID!
+    profile: Profile
+  }
 
 //   type Query {
 //     profiles: [Profile]!
