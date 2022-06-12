@@ -31,12 +31,12 @@ const resolvers = {
       }
       throw new AuthenticationError('You need to be logged in!');
     },
-//     events: async () => {
-//      return Event.find().populate("location");
-//     },
-//     event: async (parent, { _id }) => {
-//       return await Event.findById(_id).populate("location");
-//     },
+    events: async () => {
+     return Event.find().populate("location");
+    },
+    event: async (parent, { _id }) => {
+      return await Event.findById(_id).populate("location");
+    },
 //     locations: async () => {
 //       return await Location.find();
 //     },
