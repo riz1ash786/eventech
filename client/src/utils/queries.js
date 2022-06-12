@@ -23,20 +23,20 @@ export const QUERY_ME = gql`
   }
 `;
 
-// export const QUERY_ALL_EVENTS = gql`
-//   {
-//     events {
-//       _id
-//       name
-//       description
-//       whyattend
-//       image
-//       price
-//       quantity
-//       location {
-//         _id
-//         name
-//       }
-//     }
-//   }
-// `;
+export const QUERY_ALL_EVENTS = gql`
+  {
+    events {
+      _id
+      name
+      description
+      whyattend
+      image
+      price
+      quantity
+      location {
+        _id
+        name
+      }
+    }
+  }
+`;
