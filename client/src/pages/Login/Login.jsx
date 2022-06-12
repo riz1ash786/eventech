@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
-import { LOGIN_USER } from '../utils/mutations';
+import { LOGIN_USER } from '../../utils/mutations';
 import { Link } from 'react-router-dom';
-import Auth from '../utils/auth';
-
+import Auth from '../../utils/auth';
+import "./Signup.css";
 const Login = () => {
 const [formState, setFormState] = useState({ email: '', password: '' });
 const [login, { error, data }] = useMutation(LOGIN_USER);
@@ -41,10 +41,10 @@ const handleFormSubmit = async (event) => {
 
 return (
   <main>
-    <div>
-      <div>
-        <h4>Login</h4>
+    <div className="auth-wrapper">
+        <div className="auth-inner">
         <div>
+        <h3>Login</h3>
           {data ? (
             <p>
               Success! You may now head{' '}
@@ -52,26 +52,37 @@ return (
             </p>
           ) : (
             <form onSubmit={handleFormSubmit}>
+             <div className="mb-3">
+              <label>Email</label>
               <input
                 placeholder="Your email"
                 name="email"
                 type="email"
+                className="form-control"
                 value={formState.email}
                 onChange={handleChange}
               />
+              </div>
+              <div className="mb-3">
+              <label>Password</label>
               <input
                 placeholder="******"
                 name="password"
                 type="password"
+                className="form-control"
                 value={formState.password}
                 onChange={handleChange}
               />
+              </div>
+              <div className="d-grid">
               <button
                 style={{ cursor: 'pointer' }}
                 type="submit"
+                className="btn btn-primary"
               >
                 Submit
               </button>
+              </div>
             </form>
           )}
 
