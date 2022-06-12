@@ -53,14 +53,14 @@ const App = () => {
                 path="/login" 
                 element={<Login />} 
               />
-               {/* <Route 
+               <Route 
                 path="/signup" 
                 element={<Signup />} 
-              /> */}
-               {/* <Route 
+              /> 
+                <Route 
                 path="/events" 
                 element={<Events/>} 
-              /> */}
+              />
             </Routes>
           <Footer />
           </div>
