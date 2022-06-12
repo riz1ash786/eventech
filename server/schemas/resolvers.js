@@ -8,19 +8,19 @@ const { signToken } = require("../utils/auth");
 
 const resolvers = {
   Query: {
-    profiles: async () => {
-      return Profile.find().populate({
-        path: "allinterested.events",
-        populate: "location",
-      });
-    },
+    // profiles: async () => {
+    //   return Profile.find().populate({
+    //     path: "allinterested.events",
+    //     populate: "location",
+    //   });
+    // },
 
-    profile: async (parent, { profileId }) => {
-      return Profile.findOne({ _id: profileId }).populate({
-        path: "allinterested.events",
-        populate: "location",
-      });
-    },
+    // profile: async (parent, { profileId }) => {
+    //   return Profile.findOne({ _id: profileId }).populate({
+    //     path: "allinterested.events",
+    //     populate: "location",
+    //   });
+    // },
     // By adding context to our query, we can retrieve the logged in user without specifically searching for them
     me: async (parent, args, context) => {
       if (context.user) {
@@ -107,6 +107,20 @@ const resolvers = {
         { $inc: { quantity: decrement } },
         { new: true }
       );
+    },
+    addInterested: async (parent, { events }, context) => {
+      console.log(context);
+      if (context.user) {
+        const interested = new Interested({ events });
+
+        await User.findByIdAndUpdate(context.user._id, {
+          $push: { allinterested: interested },
+        });
+
+        return interested;
+      }
+
+      throw new AuthenticationError("Not logged in");
     },
   },
 };
