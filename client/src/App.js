@@ -49,14 +49,14 @@ const App = () => {
                 path="/" 
                 element={<Home />} 
               />
-              {/* <Route 
+              <Route 
                 path="/login" 
                 element={<Login />} 
-              /> */}
-               <Route 
+              />
+               {/* <Route 
                 path="/signup" 
                 element={<Signup />} 
-              />
+              /> */}
                <Route 
                 path="/events" 
                 element={<Events/>} 
