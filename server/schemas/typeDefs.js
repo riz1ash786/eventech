@@ -40,10 +40,10 @@ const typeDefs = gql`
     events: [Event]!
     eventsByLocation(location: ID!, name: String): [Event]
     event(_id: ID!): Event
-//     locations: [Location]
-//     interested(_id: ID!): Interested
+    locations: [Location]
+    interested(_id: ID!): Interested
 
-//   }
+  }
 
 //   type Mutation {
 //     addProfile(name: String!, email: String!, password: String!): Auth
