@@ -13,7 +13,7 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup/Signup.jsx';
 import Events from './pages/Events';
-// import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import './App.css';
 
 const httpLink = createHttpLink({
@@ -49,10 +49,10 @@ const App = () => {
                 path="/" 
                 element={<Home />} 
               />
-              <Route 
+              {/* <Route 
                 path="/login" 
                 element={<Login />} 
-              />
+              /> */}
                <Route 
                 path="/signup" 
                 element={<Signup />} 
