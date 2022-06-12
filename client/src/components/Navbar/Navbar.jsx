@@ -3,27 +3,61 @@ import { CgClose } from 'react-icons/cg';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import eventech from '../../assets/eventech.png';
 import './Navbar.css';
+import { Link } from "react-router-dom";
+import Auth from '../../utils/auth';
 
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = React.useState(false);
+  const logout = (event) => {
+    event.preventDefault();
+    Auth.logout();
+  };
   return (
     <nav className="custom-navbar">
       {/* Logo */}
+     
       <div className="custom-navbar-logo">
+      <Link to="/">
         <img src={eventech} alt="custom-logo" />
+      </Link>
       </div>
+      
       {/* Navbar */}
       <ul className="custom-navbar-links">
         <li className="small-parag">
-          <a href="#home">Home</a>
+        <Link to="/">
+          Home
+        </Link>
         </li>
         <li className="small-parag">
-          <a href="#about">About</a>
+        <Link to="/events">
+          Events
+        </Link>
         </li>
-        <li className="small-parag">
-          <a href="#menu">Events</a>
-        </li>
- 
+       
+        {Auth.loggedIn() ? (
+          <>
+           <li className="small-parag">
+             <button onClick={logout}>
+               Logout
+              </button>
+          </li>
+          </>
+        ):(
+          <>
+          <li className="small-parag">
+             <Link to="/login">
+               Login
+             </Link>
+          </li>
+          <li className="small-parag">
+             <Link to="/signup">
+               Signup
+             </Link>
+          </li>
+          </>
+        )}
+        
       </ul>
       {/* Navbar for small Screens */}
       <div className="custom-navbar-smallscreen">
@@ -40,25 +74,29 @@ const Navbar = () => {
             />
             <ul className="custom-navbar-smallscreen-links">
               <li>
-                <a href="#home" onClick={() => setToggleMenu(false)}>
-                  Home
-                </a>
+                <Link to="/" onClick={() => setToggleMenu(false)}> Home </Link>
               </li>
               <li>
-                <a href="#about" onClick={() => setToggleMenu(false)}>
-                  About
-                </a>
+              <Link to="/events" onClick={() => setToggleMenu(false)}> Events </Link>
               </li>
-              <li>
-                <a href="#menu" onClick={() => setToggleMenu(false)}>
-                  Events
-                </a>
-              </li>
-              <li>
-                <a href="#menu" onClick={() => setToggleMenu(false)}>
-                  Login | Signup
-                </a>
-              </li>
+              {Auth.loggedIn() ? (
+                <>
+                  <li className="small-parag" onClick={logout}>
+                   <button onClick={()=>  setToggleMenu(false)}>
+                        Logout
+                    </button>
+                 </li>
+              </>
+              ):(
+                <>
+                <li>
+                <Link to="/signup" onClick={() => setToggleMenu(false)}> Signup </Link>
+                </li>
+                <li>
+                <Link to="/login" onClick={() => setToggleMenu(false)}> Login </Link>
+                </li>
+                </>
+              )}
             </ul>
           </div>
         )}
