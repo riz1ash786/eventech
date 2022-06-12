@@ -17,16 +17,16 @@ const typeDefs = gql`
     _id: ID
     name: String
   }
-//   type Event {
-//     _id: ID
-//     name: String
-//     description: String
-//     whyattend:String
-//     image: String
-//     quantity: Int
-//     price: Float
-//     location: Location
-//   }
+  type Event {
+    _id: ID
+    name: String
+    description: String
+    whyattend:String
+    image: String
+    quantity: Int
+    price: Float
+    location: Location
+  }
 //   type Auth {
 //     token: ID!
 //     profile: Profile
