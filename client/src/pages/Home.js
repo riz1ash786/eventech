@@ -8,8 +8,8 @@ return (
          <div>
                 <Header/>
                 <AboutUs/>
-                 <Intro/>
-                 <Slides/>
+                <Intro/>
+                <Slides/>
         </div>
 
 )

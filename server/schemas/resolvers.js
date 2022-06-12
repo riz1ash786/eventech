@@ -1,22 +1,69 @@
 const { AuthenticationError } = require('apollo-server-express');
 const { Profile } = require('../models');
+const { Event } = require('../models');
+const { Location } = require('../models');
+const {Interested} = require('../models');
+
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
   Query: {
     profiles: async () => {
-      return Profile.find();
+      return Profile.find().populate({
+        path: "allinterested.events",
+        populate: "location",
+      })
     },
 
     profile: async (parent, { profileId }) => {
-      return Profile.findOne({ _id: profileId });
+      return Profile.findOne({ _id: profileId }).populate({
+        path: "allinterested.events",
+        populate: "location",
+      });
     },
     // By adding context to our query, we can retrieve the logged in user without specifically searching for them
     me: async (parent, args, context) => {
       if (context.user) {
-        return Profile.findOne({ _id: context.user._id });
+        return Profile.findOne({ _id: context.user._id }).populate({
+          path: "allinterested.events",
+          populate: "location",
+        });;
       }
       throw new AuthenticationError('You need to be logged in!');
+    },
+    events: async () => {
+     return Event.find().populate("location");
+    },
+    event: async (parent, { _id }) => {
+      return await Event.findById(_id).populate("location");
+    },
+    locations: async () => {
+      return await Location.find();
+    },
+    eventsByLocation: async (parent, { location, name }) => {
+      const params = {};
+
+      if (location) {
+        params.location = location;
+      }
+
+      if (name) {
+        params.name = {
+          $regex: name,
+        };
+      }
+
+      return await Event.find(params).populate("location");
+    },
+    interested: async (parent, { _id }, context) => {
+      if (context.user) {
+        const profile = await Profile.findById(context.profile._id).populate({
+          path: "allinterested.events",
+          populate: "location",
+        });
+        return profile.allinterested.id(_id);
+      }
+      throw new AuthenticationError("Not logged in");
     },
   },
 
@@ -44,24 +91,7 @@ const resolvers = {
       return { token, profile };
     },
 
-    // Add a third argument to the resolver to access data in our `context`
-    addSkill: async (parent, { profileId, skill }, context) => {
-      // If context has a `user` property, that means the user executing this mutation has a valid JWT and is logged in
-      if (context.user) {
-        return Profile.findOneAndUpdate(
-          { _id: profileId },
-          {
-            $addToSet: { skills: skill },
-          },
-          {
-            new: true,
-            runValidators: true,
-          }
-        );
-      }
-      // If user attempts to execute this mutation and isn't logged in, throw an error
-      throw new AuthenticationError('You need to be logged in!');
-    },
+
     // Set up mutation so a logged in user can only remove their profile and no one else's
     removeProfile: async (parent, args, context) => {
       if (context.user) {
@@ -69,17 +99,17 @@ const resolvers = {
       }
       throw new AuthenticationError('You need to be logged in!');
     },
-    // Make it so a logged in user can only remove a skill from their own profile
-    removeSkill: async (parent, { skill }, context) => {
-      if (context.user) {
-        return Profile.findOneAndUpdate(
-          { _id: context.user._id },
-          { $pull: { skills: skill } },
-          { new: true }
-        );
-      }
-      throw new AuthenticationError('You need to be logged in!');
+
+    updateEvent: async (parent, { _id, quantity }) => {
+      const decrement = Math.abs(quantity) * -1;
+
+      return await Event.findByIdAndUpdate(
+        _id,
+        { $inc: { quantity: decrement } },
+        { new: true }
+      );
     },
+
   },
 };
 
