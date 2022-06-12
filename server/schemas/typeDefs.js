@@ -21,7 +21,7 @@ const typeDefs = gql`
     _id: ID
     name: String
     description: String
-    whyattend:String
+    whyattend: String
     image: String
     quantity: Int
     price: Float
@@ -42,15 +42,14 @@ const typeDefs = gql`
     event(_id: ID!): Event
     locations: [Location]
     interested(_id: ID!): Interested
-
   }
 
   type Mutation {
     addProfile(name: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
     removeProfile: Profile
-//     updateEvent(_id: ID!, quantity: Int!): Event
-//   }
-// `;
+    updateEvent(_id: ID!, quantity: Int!): Event
+  }
+`;
 
 // module.exports = typeDefs;
