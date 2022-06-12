@@ -10,37 +10,37 @@ const Events = () => {
         return <h3>No Events Yet</h3>;
       }
 
-//     return(
+    return(
      
-//         <div>
-//           <div>
-//             {loading ? (
-//               <div>Loading...</div>
-//             ) : (
-//               <>
-//               {events&& 
-//               events.map((oneevent)=> (
-//                   <>
-//                   <div>
-//                       {oneevent.name}
-//                       {oneevent.description}
-//                       {oneevent.whyattend}
-//                       {oneevent.quantity}
-//                       {oneevent.price}
-//                       {oneevent.location.name}
-//                       <img src={`/images/${oneevent.image}`}/>
+        <div>
+          <div>
+            {loading ? (
+              <div>Loading...</div>
+            ) : (
+              <>
+              {events&& 
+              events.map((oneevent)=> (
+                  <>
+                  <div>
+                      {oneevent.name}
+                      {oneevent.description}
+                      {oneevent.whyattend}
+                      {oneevent.quantity}
+                      {oneevent.price}
+                      {oneevent.location.name}
+                      <img src={`/images/${oneevent.image}`}/>
                      
-//                       </div>
-//                   </>
-//               ))}
-//               </>
+                      </div>
+                  </>
+              ))}
+              </>
                  
-//             )}
-//           </div>
-//         </div>
+            )}
+          </div>
+        </div>
  
-// )
-// };
+)
+};
   
-// export default Events;
+export default Events;
   
