@@ -1,15 +1,15 @@
-// const mongoose = require("mongoose");
+const mongoose = require("mongoose");
 
-// const { Schema } = mongoose;
+const { Schema } = mongoose;
 
-// const locationSchema = new Schema({
-//   name: {
-//     type: String,
-//     required: true,
-//     trim: true,
-//   },
-// });
+const locationSchema = new Schema({
+  name: {
+    type: String,
+    required: true,
+    trim: true,
+  },
+});
 
-// const Location = mongoose.model("Location", locationSchema);
+const Location = mongoose.model("Location", locationSchema);
 
-// module.exports = Location;
+module.exports = Location;
