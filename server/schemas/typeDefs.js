@@ -32,11 +32,11 @@ const typeDefs = gql`
     profile: Profile
   }
 
-//   type Query {
-//     profiles: [Profile]!
-//     profile(profileId: ID!): Profile
-//     # Because we have the context functionality in place to check a JWT and decode its data, we can use a query that will always find and return the logged in user's data
-//     me: Profile
+  type Query {
+    profiles: [Profile]!
+    profile(profileId: ID!): Profile
+    # Because we have the context functionality in place to check a JWT and decode its data, we can use a query that will always find and return the logged in user's data
+    me: Profile
 //     events: [Event]!
 //     eventsByLocation(location: ID!, name: String): [Event]
 //     event(_id: ID!): Event
