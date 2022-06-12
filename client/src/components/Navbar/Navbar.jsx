@@ -23,9 +23,7 @@ const Navbar = () => {
         <li className="small-parag">
           <a href="#menu">Events</a>
         </li>
-        <li className="small-parag">
-          <a href="#menu">Login | Signup</a>
-        </li>
+ 
       </ul>
       {/* Navbar for small Screens */}
       <div className="custom-navbar-smallscreen">
