@@ -57,10 +57,10 @@ const App = () => {
                 path="/signup" 
                 element={<Signup />} 
               /> */}
-               <Route 
+               {/* <Route 
                 path="/events" 
                 element={<Events/>} 
-              />
+              /> */}
             </Routes>
           <Footer />
           </div>
