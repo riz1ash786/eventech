@@ -45,10 +45,10 @@ const typeDefs = gql`
 
   }
 
-//   type Mutation {
-//     addProfile(name: String!, email: String!, password: String!): Auth
-//     login(email: String!, password: String!): Auth
-//     removeProfile: Profile
+  type Mutation {
+    addProfile(name: String!, email: String!, password: String!): Auth
+    login(email: String!, password: String!): Auth
+    removeProfile: Profile
 //     updateEvent(_id: ID!, quantity: Int!): Event
 //   }
 // `;
