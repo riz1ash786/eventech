@@ -6,13 +6,13 @@ const typeDefs = gql`
     events: [Event]
   }
 
-//   type Profile {
-//     _id: ID
-//     name: String
-//     email: String
-//     password: String
-//     allinterested: [Interested]
-//   }
+  type Profile {
+    _id: ID
+    name: String
+    email: String
+    password: String
+    allinterested: [Interested]
+  }
 //   type Location {
 //     _id: ID
 //     name: String
