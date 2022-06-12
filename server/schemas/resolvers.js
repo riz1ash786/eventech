@@ -55,17 +55,17 @@ const resolvers = {
 
       return await Event.find(params).populate("location");
     },
-//     interested: async (parent, { _id }, context) => {
-//       if (context.user) {
-//         const profile = await Profile.findById(context.profile._id).populate({
-//           path: "allinterested.events",
-//           populate: "location",
-//         });
-//         return profile.allinterested.id(_id);
-//       }
-//       throw new AuthenticationError("Not logged in");
-//     },
-//   },
+    interested: async (parent, { _id }, context) => {
+      if (context.user) {
+        const profile = await Profile.findById(context.profile._id).populate({
+          path: "allinterested.events",
+          populate: "location",
+        });
+        return profile.allinterested.id(_id);
+      }
+      throw new AuthenticationError("Not logged in");
+    },
+  },
 
 //   Mutation: {
 //     addProfile: async (parent, { name, email, password }) => {
