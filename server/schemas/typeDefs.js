@@ -13,10 +13,10 @@ const typeDefs = gql`
     password: String
     allinterested: [Interested]
   }
-//   type Location {
-//     _id: ID
-//     name: String
-//   }
+  type Location {
+    _id: ID
+    name: String
+  }
 //   type Event {
 //     _id: ID
 //     name: String
