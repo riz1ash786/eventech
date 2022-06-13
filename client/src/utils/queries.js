@@ -10,13 +10,14 @@ export const QUERY_ME = gql`
         _id
         events{
           _id: ID
-          name: String
-          description: String
-          whyattend: String
-          image: String
-          quantity: Int
-          price: Float
-          location: Location
+          name
+          description
+          whyattend
+          image
+          link
+          quantity
+          price
+          location
         }
       }
     }
@@ -32,6 +33,26 @@ export const QUERY_ALL_EVENTS = gql`
       whyattend
       image
       price
+      quantity
+      link
+      location {
+        _id
+        name
+      }
+    }
+  }
+`;
+
+export const QUERY_SINGLE_EVENT = gql`
+    query singleEvent($eventId: ID!) {
+       event(eventId: $eventId) {
+      _id
+      name
+      description
+      whyattend
+      image
+      price
+      link
       quantity
       location {
         _id
