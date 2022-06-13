@@ -14,6 +14,8 @@ import Login from './pages/Login/Login.jsx';
 import Signup from './pages/Signup/Signup.jsx';
 import Events from './pages/Events/Events.jsx';
 import SingleEvent from './pages/SingleEvent/SingleEvent.jsx';
+import Interested from './pages/Interested/Interested.jsx';
+import AddEvent from './pages/AddEvent/AddEvent.jsx';
 
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import './App.css';
@@ -66,6 +68,14 @@ const App = () => {
               <Route 
                 path="/events/:eventId" 
                 element={<SingleEvent />} 
+              />
+                <Route 
+                path="/interested" 
+                element={<Interested />} 
+              />
+              <Route 
+                path="/addevent" 
+                element={<AddEvent />} 
               />
             </Routes>
           <Footer />
