@@ -34,8 +34,8 @@ const resolvers = {
     events: async () => {
       return Event.find().populate("location");
     },
-    event: async (parent, { _id }) => {
-      return await Event.findById(_id).populate("location");
+    event: async (parent, { eventId }) => {
+      return Event.findOne({_id: eventId}).populate("location");
     },
     locations: async () => {
       return await Location.find();

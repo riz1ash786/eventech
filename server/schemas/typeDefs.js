@@ -25,6 +25,7 @@ const typeDefs = gql`
     image: String
     quantity: Int
     price: Float
+    link:String
     location: Location
   }
   type Auth {
@@ -37,7 +38,7 @@ const typeDefs = gql`
     me: Profile
     events: [Event]!
     eventsByLocation(location: ID!, name: String): [Event]
-    event(_id: ID!): Event
+    event(eventId: ID!): Event
     locations: [Location]
     interested(_id: ID!): Interested
   }

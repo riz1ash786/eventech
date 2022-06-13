@@ -32,6 +32,9 @@ const eventSchema = new Schema({
     ref: "Location",
     required: true,
   },
+  link:{
+    type:String,
+  }
 });
 
 const Event = mongoose.model("Event", eventSchema);

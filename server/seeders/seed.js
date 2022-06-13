@@ -26,6 +26,7 @@ db.once("open", async () => {
         whyattend:
           "Keynotes, panels and roundtables covering a wide number of brand new topics reflecting current trends and market outlook.",
         image: "datacloud.jpeg",
+        link: "https://events.broad-group.com/event/a4ba77f1-52e2-4570-a6f5-d442cd3eca93/summary",
         location: locations[1]._id,
         price: 60,
         quantity: 500,
@@ -37,6 +38,7 @@ db.once("open", async () => {
         whyattend:
           "Three days of keynotes, seminars and seminars covering the application of AV technology in industries from hospitality and smart homes to retail, live events and more.",
         image: "europe.png",
+        link: "https://www.iseurope.org/location-and-opening-hours/",
         location: locations[1]._id,
         price: 70,
         quantity: 500,
@@ -49,6 +51,7 @@ db.once("open", async () => {
         whyattend:
           "As new business challenges arise and the economy shifts, TSW delivers relevant technology services, sales, channel optimization and product content that will help attendees navigate the changes.",
         image: "tsia.png",
+        link: "https://www.tsia.com/conference-pricing",
         price: 55,
         quantity: 20,
       },
@@ -60,12 +63,14 @@ db.once("open", async () => {
         whyattend:
           "The focus of Computex 2022 will be on innovative computing, accelerating intelligence, digital resilience, connected X-Experience, innovations and startups, and sustainability. Expect big announcement from Intel, AMD, Nvidia and the other semiconductor giants.",
         image: "computex.jpg",
+        link: "https://computex.net/",
         price: 90,
         quantity: 50,
       },
       {
         name: "RSA Conference 2022",
         location: locations[3]._id,
+        link: "https://www.rsaconference.com/usa/passes-and-rates?_ga=2.140655930.909013570.1655140944-1356203035.1655140944",
         description:
           "RSA Conference is a long-running event that brings the world's leading cybersecurity professionals under one roof.",
         whyattend:
@@ -77,6 +82,7 @@ db.once("open", async () => {
       {
         name: "London Tech Week",
         location: locations[0]._id,
+        link: "https://londontechweek.com/registration/",
         description:
           "London Tech Week is a week-long celebration of technology innovation, housing various different technology-specific shows.",
         whyattend:
@@ -88,6 +94,7 @@ db.once("open", async () => {
       {
         name: "Dublin Tech Summit",
         location: locations[0]._id,
+        link: "https://dublintechsummit.tech/dts-live-tickets/?utm_campaign=WG+-+Search+-+Brand+-+UK+-+BMM&utm_medium=ppc&utm_source=adwords&utm_term=dublin%20tech%20summit&hsa_acc=8160713141&hsa_ver=3&hsa_kw=dublin%20tech%20summit&hsa_net=adwords&hsa_ad=421806371704&hsa_tgt=kwd-297591758102&hsa_grp=100188825547&hsa_mt=b&hsa_src=g&hsa_cam=9525410373&gclid=Cj0KCQjwwJuVBhCAARIsAOPwGAS_joxjB8yM1nPwCeXBp2e6Tpitsb8OVqQc12-NgXyRlZ9RSYLhWW4aArKREALw_wcB",
         description:
           "Dublin Tech Summit Virtual will gather the most influential minds in tech and business from across the globe.",
         whyattend:
@@ -99,6 +106,7 @@ db.once("open", async () => {
       {
         name: "Cloudflare Connect",
         location: locations[5]._id,
+        link: "https://www.cloudflare.com/pg-lp/free-fast-secure-dns/?&_bt=601494744645&_bk=cf%20dns&_bm=b&_bn=g&_bg=136911167506&_placement=&_target=&_loc=1006884&_dv=c&awsearchcpc=1&gclid=Cj0KCQjwwJuVBhCAARIsAOPwGAQpLvpjICrDdBFh5z9FsDP72LoKRoXNBsOh9j6IXmGk3O_SGOGrEr4aAgRREALw_wcB&gclsrc=aw.ds",
         description:
           "Cloudflare Connect brings together the experts driving network and security transformation to discuss what's next in the space.",
         whyattend:
@@ -110,6 +118,7 @@ db.once("open", async () => {
       {
         name: "Infosecurity Europe",
         location: locations[5]._id,
+        link: "https://www.iseurope.org/location-and-opening-hours/",
         description:
           "Infosecurity Europe is up there with the largest and most well-regarded cybersecurity conferences in the calendar.",
         whyattend:
@@ -120,6 +129,7 @@ db.once("open", async () => {
       },
       {
         name: "Black Hat USA 2022",
+        link: "https://www.blackhat.com/us-22/registration.html",
         location: locations[3]._id,
         description:
           "Black Hat is a long-running and highly technical show for security professionals.",
@@ -132,6 +142,7 @@ db.once("open", async () => {
       {
         name: "IFA Berlin",
         location: locations[5]._id,
+        link: "https://b2b.ifa-berlin.com/en/trade-visitors/ticketing-services/",
         description:
           "IFA is Europe's biggest technology showcase, held in September every year in Berlin and attended by most of the major players in the industry.",
         whyattend:
@@ -143,6 +154,7 @@ db.once("open", async () => {
       {
         name: "GITEX Global",
         location: locations[2]._id,
+        link: "https://www.gitex.com/why-visit",
         description:
           "The Middle East's largest show for the technology industry that brings together thought-leaders, creators, innovators and makers to discuss, debate and challenge new ideology, showcase new products and identify future opportunities",
         whyattend:
