@@ -184,5 +184,10 @@
 
 a{
   text-decoration: none;
-  color:white;
+  color:var(--color-light);
+
+}
+
+a:hover{
+  color:var(--color-cream)
 }

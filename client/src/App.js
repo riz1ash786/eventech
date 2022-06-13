@@ -12,7 +12,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Login from './pages/Login/Login.jsx';
 import Signup from './pages/Signup/Signup.jsx';
-import Events from './pages/Events';
+import Events from './pages/Events/Events.jsx';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import './App.css';
 
