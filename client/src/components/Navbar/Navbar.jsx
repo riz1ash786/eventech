@@ -38,7 +38,7 @@ const Navbar = () => {
         {Auth.loggedIn() ? (
           <>
            <li className="small-parag">
-             <button onClick={logout}>
+             <button onClick={logout} className="logout-btn">
                Logout
               </button>
           </li>
@@ -46,12 +46,12 @@ const Navbar = () => {
         ):(
           <>
           <li className="small-parag">
-             <Link to="/login">
+             <Link to="/login" className="actions">
                Login
              </Link>
           </li>
           <li className="small-parag">
-             <Link to="/signup">
+             <Link to="/signup" className="actions">
                Signup
              </Link>
           </li>
