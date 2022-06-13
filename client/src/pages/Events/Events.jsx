@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useQuery } from '@apollo/client';
 import { QUERY_ALL_EVENTS } from '../../utils/queries';
+import Locations from "../../container/Locations/Locations.jsx"
 import "./Events.css";
 
 const Events = () => {
@@ -12,18 +13,10 @@ const Events = () => {
       }
 
     return(
-     
-
-
+<div>
+    <Locations/>
 
 <section>
-
-
-
-
-
-
-
 
 <div className="container project-container">
       {loading ? (
@@ -53,7 +46,7 @@ const Events = () => {
               )}
                </div>
   </section>
-
+  </div>
 
         //               {oneevent.name}
         //               {oneevent.description}
@@ -63,8 +56,7 @@ const Events = () => {
         //               {oneevent.location.name}
         //               <img src={`/images/${oneevent.image}`}/>
 
-        
- 
+      
 )
 };
   
