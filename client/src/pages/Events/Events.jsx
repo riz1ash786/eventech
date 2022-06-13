@@ -4,6 +4,7 @@ import { QUERY_ALL_EVENTS } from '../../utils/queries';
 import Locations from "../../container/Locations/Locations.jsx"
 import "./Events.css";
 import { Link } from 'react-router-dom';
+import {AiOutlineHeart} from 'react-icons/ai';
 
 const Events = () => {
     const { loading, data } = useQuery(QUERY_ALL_EVENTS);
@@ -16,7 +17,6 @@ const Events = () => {
     return(
 <div>
     <Locations/>
-
 <section>
 
 <div className="container project-container">
@@ -40,6 +40,7 @@ const Events = () => {
         <div className="project-item-cta">
         <Link to={`/events/${oneevent._id}`} className="btn-1"> Find out more </Link>  
         </div>
+      
         </article> 
              </>
               ))}
