@@ -40,3 +40,12 @@ export const QUERY_ALL_EVENTS = gql`
     }
   }
 `;
+
+export const QUERY_ALL_LOCATIONS = gql`
+  {
+    locations{
+      _id
+      name
+    }
+  }
+`;
