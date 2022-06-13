@@ -5,6 +5,7 @@ import eventech from '../../assets/eventech.png';
 import './Navbar.css';
 import { Link } from "react-router-dom";
 import Auth from '../../utils/auth';
+import {AiOutlineHeart} from 'react-icons/ai';
 
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = React.useState(false);
@@ -37,11 +38,30 @@ const Navbar = () => {
        
         {Auth.loggedIn() ? (
           <>
+
+
+         <Link to="/addevent">
+          <li className="small-parag">
+             <button className="logout-btn">
+               Add Event
+              </button>
+          </li>
+          </Link>
+
            <li className="small-parag">
              <button onClick={logout} className="logout-btn">
                Logout
               </button>
           </li>
+
+      <li className="small-parag heart">
+          <Link to="/interested">     
+        <AiOutlineHeart
+          fontSize={35}
+        /></Link> 
+     </li>
+   
+
           </>
         ):(
           <>
@@ -81,11 +101,30 @@ const Navbar = () => {
               </li>
               {Auth.loggedIn() ? (
                 <>
-                  <li className="small-parag" onClick={logout}>
+           
+                <Link to="/addevent">
+                 <li className="small-parag">
+                   <button className="logout-btn" onClick={()=>  setToggleMenu(false)}>
+                        Add Event
+                    </button>
+                 </li>
+                 </Link>
+
+                 <li className="small-parag" onClick={logout}>
                    <button className="logout-btn" onClick={()=>  setToggleMenu(false)}>
                         Logout
                     </button>
                  </li>
+
+
+                 <li className="small-parag heart">
+                   <Link to="/interested" onClick={()=>  setToggleMenu(false)}>     
+                       <AiOutlineHeart
+                        fontSize={35}
+                     /></Link> 
+                 </li>
+
+
               </>
               ):(
                 <>

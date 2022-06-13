@@ -90,6 +90,14 @@
   color:var(--color-gold);
   font-size:17px;
 }
+
+
+.heart a{
+  color: var(--color-gold);
+}
+
+
+
 @media screen and (min-width: 2000px) {
   .custom-navbar-logo img {
     width: 210px;
