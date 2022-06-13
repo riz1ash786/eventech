@@ -179,6 +179,7 @@ db.once("open", async () => {
             events: [events[0]._id, events[2]._id, events[1]._id],
           },
         ],
+        eventsCreated: [events[0]]
       },
       {
         name: "Max Kanat-Alexander",
@@ -186,9 +187,10 @@ db.once("open", async () => {
         password: "password02",
         allinterested: [
           {
-            events: [events[10]._id, events[3]._id, events[6]._id],
+            events: [events[10]],
           },
         ],
+        eventsCreated: [events[1]]
       },
       {
         name: "Amiko",
@@ -199,7 +201,8 @@ db.once("open", async () => {
             events: [events[0]._id, events[8]._id, events[5]._id],
           },
         ],
-      },
+        eventsCreated: [events[2]]
+       },
       {
         name: "Kent Beck",
         email: "kbeck@techfriends.dev",
@@ -209,6 +212,7 @@ db.once("open", async () => {
             events: [events[6]._id, events[11]._id, events[9]._id],
           },
         ],
+        eventsCreated: [events[3]]
       },
       {
         name: "Edward V. Berard",
@@ -219,6 +223,7 @@ db.once("open", async () => {
             events: [events[6]._id, events[5]._id, events[1]._id],
           },
         ],
+        eventsCreated: [events[4]]
       },
       {
         name: "Alan Kay",
@@ -229,6 +234,7 @@ db.once("open", async () => {
             events: [events[10]._id, events[5]._id, events[9]._id],
           },
         ],
+        eventsCreated: [events[5]]
       },
       {
         name: "C.A.R. Hoare",
@@ -239,6 +245,7 @@ db.once("open", async () => {
             events: [events[1]._id, events[2]._id, events[8]._id],
           },
         ],
+        eventsCreated: [events[6]]
       },
       {
         name: "David Thomas",
@@ -249,6 +256,7 @@ db.once("open", async () => {
             events: [events[9]._id, events[7]._id, events[11]._id],
           },
         ],
+        eventsCreated: [events[7]]
       },
       {
         name: "Donald Knuth",
@@ -259,6 +267,7 @@ db.once("open", async () => {
             events: [events[1]._id, events[2]._id, events[8]._id],
           },
         ],
+        eventsCreated: [events[8]]
       },
       {
         name: "Lernantino",
@@ -269,6 +278,7 @@ db.once("open", async () => {
             events: [events[9]._id, events[8]._id, events[7]._id],
           },
         ],
+        eventsCreated: [events[9]]
       },
     ]);
 
