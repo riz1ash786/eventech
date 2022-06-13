@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&family=Luxurious+Roman&family=Open+Sans:wght@300&family=Raleway:wght@100;300;500&family=Roboto:wght@100;300&display=swap');
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+section{
+    width: 55%;
+    margin: 0 auto;
+    margin-top:2rem;
+}
+
+.btn-1{
+    margin-top:35px;
+    width:max-content;
+    padding:15px;
+    box-sizing: border-box;
+    border: transparent;
+    border-radius: 30px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: #ffffff;
+    background-color: #ee9e0a;
+    cursor: pointer;
+    outline: none;
+}
+
+.btn-1:hover{
+    background-color: #aa7005;
+}
+
+.project-container{
+    display:grid;
+    grid-template-columns: repeat(1,1fr);
+    gap:2.5rem;
+}
+
+.project-item{
+    padding:1.2rem;
+    border-radius:2rem;
+    border:1px solid transparent;
+    border-color:var(--color-gold);
+    -webkit-box-shadow: 0px 14px 32px 0px rgba(241, 202, 45, 0.982);
+    -moz-box-shadow: 0px 14px 32px 0px rgba(241, 202, 45, 0.982);
+    box-shadow: 1px 3px 3px 1px rgba(241, 202, 45, 0.982);
+}
+
+.project-item:hover{
+    border-width:2px;
+}
+
+.project-item-img{
+    border-radius:1.5rem;
+    overflow: hidden;
+}
+
+.project-item-img img{
+    aspect-ratio: 1/0.5;
+    display: block;
+    width:100%;
+    object-fit: cover;
+}
+
+.project-item h3{
+    text-align:center;
+    color:var(--color-cream);
+    margin-top:30px;
+    font-family: 'Bentham', serif;
+}
+
+.project-item h2 {
+    text-align:center;
+    margin-top:0;
+    font-size: 13px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #d2d2d2;
+    letter-spacing: 1em;
+  }
+
+.project-item-cta{
+    display: flex;
+    margin-bottom: 1rem;
+    justify-content: space-around;
+}
+
+
+@media screen and (max-width: 1024px){
+    section{
+        margin-top:2rem;
+        width:90%;
+    }
+    .project-item-img img{
+        aspect-ratio: 1/0.7;
+    }
+}
+
