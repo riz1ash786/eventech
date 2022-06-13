@@ -82,7 +82,7 @@ const Navbar = () => {
               {Auth.loggedIn() ? (
                 <>
                   <li className="small-parag" onClick={logout}>
-                   <button onClick={()=>  setToggleMenu(false)}>
+                   <button className="logout-btn" onClick={()=>  setToggleMenu(false)}>
                         Logout
                     </button>
                  </li>

@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useQuery } from '@apollo/client';
 import { QUERY_ALL_EVENTS } from '../../utils/queries';
 import Locations from "../../container/Locations/Locations.jsx"
 import "./Events.css";
+import { Link } from 'react-router-dom';
 
 const Events = () => {
     const { loading, data } = useQuery(QUERY_ALL_EVENTS);
@@ -29,7 +30,7 @@ const Events = () => {
         events.map((oneevent)=> (
               <>
       
-       <article className="project-item">
+       <article className="project-item" key={oneevent._id}>
           <div className="project-item-img">
             <img src={`/images/${oneevent.image}`} alt={oneevent.name}></img>
           </div>
@@ -37,7 +38,7 @@ const Events = () => {
         <h2>{oneevent.location.name}</h2>
 
         <div className="project-item-cta">
-        <a href="/" className="btn-1" target="_blank"> Find out more</a>        
+        <Link to={`/events/${oneevent._id}`} className="btn-1"> Find out more </Link>  
         </div>
         </article> 
              </>
@@ -47,15 +48,6 @@ const Events = () => {
                </div>
   </section>
   </div>
-
-        //               {oneevent.name}
-        //               {oneevent.description}
-        //               {oneevent.whyattend}
-        //               {oneevent.quantity}
-        //               {oneevent.price}
-        //               {oneevent.location.name}
-        //               <img src={`/images/${oneevent.image}`}/>
-
       
 )
 };
