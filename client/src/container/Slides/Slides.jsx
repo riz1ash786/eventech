@@ -10,6 +10,7 @@ import event2 from "../../assets/event2.png";
 import event3 from "../../assets/event3.png";
 import event4 from "../../assets/event4.png";
 import "./Slides.css";
+import { Link } from 'react-router-dom';
 
 const Slides = () => {
   const scrollingRef = React.useRef(null);
@@ -40,10 +41,13 @@ const Slides = () => {
           Some photos from our the latest Events
         </p>
         <button type="button" className="custom-btn">
+          <a href="https://www.instagram.com/"  target="_blank" style={{color:"black"}}>
           View More
+          </a>
         </button>
       </div>
-      <div className="custom-event-img">
+
+      <div className="custom-event-img">          
         <div className="custom-event-pic-container" ref={scrollingRef}>
            <div
                 className="custom-event-pic-card custom-flex-center"

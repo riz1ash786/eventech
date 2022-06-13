@@ -3,6 +3,7 @@ import T from "../../assets/T.png";
 import arrow from "../../assets/arrow.png";
 import light from "../../assets/light.png";
 import "./AboutUs.css";
+import { Link } from 'react-router-dom';
 
 const AboutUs = () => (
   <div
@@ -22,7 +23,9 @@ const AboutUs = () => (
           upcoming events, all in one place!
         </p>
         <button type="button" className="custom-btn">
+        <Link to="/events" style={{color:"black"}}>
           All Events
+          </Link>
         </button>
       </div>
 
