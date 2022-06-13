@@ -1,0 +1,58 @@
+.event-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.event-content_quote {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+.event-content_quote img {
+    width: 47px;
+    height: 40px;
+    margin: 0 1rem 1rem 0;
+}
+
+.book{
+    margin-top:20px;
+    padding:20px;
+    box-sizing: border-box;
+    border-radius: 30px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.7em;
+    color: var(--color-gold);
+    background-color: transparent;
+    border-color:  var(--color-gold);
+    cursor: pointer;
+    outline: none;
+
+}
+
+.book:hover{
+    border-width:3px;
+}
+
+h6 {
+    margin-top:0;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #d2d2d2;
+    letter-spacing: 1em;
+  }
+
+.whyattend{
+      margin-top:60px;
+  }
+
+.titles{
+      color:rgb(245, 233, 233);
+      letter-spacing: 0.1em;
+      font-family: var(--font2);
+  }
