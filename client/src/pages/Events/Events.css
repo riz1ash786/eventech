@@ -9,7 +9,11 @@ section{
     margin: 0 auto;
     margin-top:2rem;
 }
-
+.tags-section{
+    width: 85%;
+    margin: 0 auto;
+    margin-top:2rem;
+}
 .btn-1{
     margin-top:35px;
     width:max-content;
@@ -23,7 +27,7 @@ section{
     text-transform: uppercase;
     letter-spacing: 0.2em;
     color: #ffffff;
-    background-color: #ee9e0a;
+    background-color: #ce8b0d;
     cursor: pointer;
     outline: none;
 }
@@ -38,6 +42,28 @@ section{
     gap:2.5rem;
 }
 
+.tags-container{
+    display:grid;
+    grid-template-columns: repeat(6,1fr);
+    gap:0.5rem;
+    margin-bottom:80px;
+}
+
+.tags{
+    padding:10px;
+    box-sizing: border-box;
+    border-radius: 30px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.7em;
+    color: var(--color-gold);
+    background-color: transparent;
+    border-color:  var(--color-gold);
+    cursor: pointer;
+    outline: none;
+}
 .project-item{
     padding:1.2rem;
     border-radius:2rem;
@@ -90,6 +116,14 @@ section{
 
 
 @media screen and (max-width: 1024px){
+    .tags-section{
+        width: 95%;
+    }
+    .tags-container{
+        display:grid;
+        grid-template-columns: repeat(3,1fr);
+        gap:0.5rem;
+    }
     section{
         margin-top:2rem;
         width:90%;
