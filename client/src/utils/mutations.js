@@ -25,11 +25,11 @@ export const LOGIN_USER = gql`
 `;
 
 export const SAVE_EVENT = gql`
-//   mutation saveEvent($eventId: ID!) {
-//     saveEvent(eventId: $eventId) {
-//       savedEvents {
-//         _id
-//       }
-//     }
-//   }
-// `;
+  mutation saveEvent($eventId: ID!) {
+    saveEvent(eventId: $eventId) {
+      savedEvents {
+        _id
+      }
+    }
+  }
+`;

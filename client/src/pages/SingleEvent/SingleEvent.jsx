@@ -19,20 +19,20 @@ const SingleEvent = () => {
   const event = data?.event || {};
   const loading = getEventsLoading || saveEventLoading;
 
-  useEffect(() => {
-    if (!Auth.loggedIn()) {
-      navigate("/login");
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (!Auth.loggedIn()) {
+  //     navigate("/login");
+  //   }
+  // }, []);
 
-  const handleSaveEvent = async () => {
-    debugger;
-    saveEvent({
-      variables: {
-        eventId,
-      },
-    });
-  };
+  // const handleSaveEvent = async () => {
+  //   debugger;
+  //   saveEvent({
+  //     variables: {
+  //       eventId,
+  //     },
+  //   });
+  // };
 
   return loading ? (
     <div>Loading...</div>
