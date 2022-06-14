@@ -21,12 +21,12 @@ const profileSchema = new Schema(
       required: true,
       minlength: 5,
     },
-    // savedEvents: [
-    //   {
-    //     type: Schema.Types.ObjectId,
-    //     ref: "Event",
-    //   },
-    // ],
+    savedEvents: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Event",
+      },
+    ],
   },
   // set this to use virtual below
   {
