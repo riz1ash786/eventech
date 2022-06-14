@@ -34,20 +34,20 @@ const eventSchema = new Schema({
     type:String,
   },
   createdAt:{
-  //   type:String,
-  // },
-  // comments:[
-  //   {
-  //     body: String,
-  //     username: String,
-  //     createdAt: String,
-  //   }
-  // ],
-  // likes: [
-  //   {
-  //     username: String,
-  //     createdAt: String,
-  //   }
+    type:String,
+  },
+  comments:[
+    {
+      body: String,
+      username: String,
+      createdAt: String,
+    }
+  ],
+  likes: [
+    {
+      username: String,
+      createdAt: String,
+    }
   ],
   profile: {
     type: Schema.Types.ObjectId,
