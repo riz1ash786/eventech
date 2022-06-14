@@ -5,16 +5,16 @@ db.once("open", async () => {
   try {
     await Location.deleteMany();
 
-    const locations = await Location.insertMany([
-      { name: "UK" },
-      { name: "Europe" },
-      { name: "Asia" },
-      { name: "Americas" },
-      { name: "Far-East" },
-      { name: "Remote" },
-    ]);
+    // const locations = await Location.insertMany([
+    //   { name: "UK" },
+    //   { name: "Europe" },
+    //   { name: "Asia" },
+    //   { name: "Americas" },
+    //   { name: "Far-East" },
+    //   { name: "Remote" },
+    // ]);
 
-    console.log("locations seeded");
+    // console.log("locations seeded");
 
     await Event.deleteMany();
 
