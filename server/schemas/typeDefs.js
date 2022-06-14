@@ -25,10 +25,10 @@ const typeDefs = gql`
     link:String
     location: Location
     username: String
-    // comments: [Comment]!
-    // likes: [like]!
-    // likeCount: Int!
-    // commentCount: Int!
+    comments: [Comment]!
+    likes: [like]!
+    likeCount: Int!
+    commentCount: Int!
     profile: Profile
   }
 

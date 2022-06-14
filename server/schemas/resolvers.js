@@ -88,20 +88,20 @@ const resolvers = {
       throw new AuthenticationError("You need to be logged in!");
     },
 
-    saveEvent: async (_, { eventId }, context) => {
-      if (!context.user) {
-        throw new AuthenticationError("You need to be logged in!");
-      }
+  //   saveEvent: async (_, { eventId }, context) => {
+  //     if (!context.user) {
+  //       throw new AuthenticationError("You need to be logged in!");
+  //     }
 
-      const updatedProfile = await Profile.findOneAndUpdate(
-        { _id: context.user._id },
-        { $addToSet: { savedEvents: eventId } },
-        { new: true, runValidators: true }
-      ).populate("savedEvents");
+  //     const updatedProfile = await Profile.findOneAndUpdate(
+  //       { _id: context.user._id },
+  //       { $addToSet: { savedEvents: eventId } },
+  //       { new: true, runValidators: true }
+  //     ).populate("savedEvents");
 
-      return updatedProfile;
-    },
-  },
+  //     return updatedProfile;
+  //   },
+  // },
 };
 
 module.exports = resolvers;
