@@ -32,9 +32,9 @@ const Events = () => {
       
        <article className="project-item" key={oneevent._id}>
           <div className="project-item-img">
-            <img src={`/images/${oneevent.image}`} alt={oneevent.name}></img>
+            <img src={`/images/${oneevent.image}`} alt={oneevent.title}></img>
           </div>
-        <h3>{oneevent.name}</h3>
+        <h3>{oneevent.title}</h3>
         <h2>{oneevent.location.name}</h2>
 
         <div className="project-item-cta">
