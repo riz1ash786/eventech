@@ -3,6 +3,7 @@ import React from "react";
 import conference from "../../assets/conference.png";
 import arrow from "../../assets/arrow.png";
 import "./Header.css";
+import { Link } from 'react-router-dom';
 
 const Header = () => (
   <div className="custom-header custom-wrap padding-section" id="home">
@@ -16,8 +17,10 @@ const Header = () => (
         An app where you can find all the upcoming tech events and conferences,
         create your own event and more ...
       </p>
-      <button type="button" className="custom-btn">
+      <button type="button" className="custom-btn cutom-color-btn">
+        <Link to="/events" style={{color:"black"}}>
         Explore Upcoming Events
+        </Link>
       </button>
     </div>
 

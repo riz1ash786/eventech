@@ -64,17 +64,39 @@
 }
 
 .custom-navbar-smallscreen-links li {
-  margin: 5rem;
+  margin-top:25px;
   color: var(--color-gold);
   cursor: pointer;
   text-align: center;
-  font-size: 2rem;
   font-family: var(--font1);
+  width:100%;
 }
-
+.custom-navbar-smallscreen-links li a{
+  font-size: 25px;
+}
 .custom-navbar-smallscreen-links li:hover {
   color: var(--color-light);
 }
+.logout-btn{
+  background-color: transparent;
+  border-width: 0;
+  color:var(--color-gold);
+  font-size: 20px;
+}
+.logout-btn:focus{
+  background-color: transparent;
+}
+.actions{
+  color:var(--color-gold);
+  font-size:17px;
+}
+
+
+.heart a{
+  color: var(--color-gold);
+}
+
+
 
 @media screen and (min-width: 2000px) {
   .custom-navbar-logo img {

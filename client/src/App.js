@@ -10,7 +10,14 @@ import {
 import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
+import Login from './pages/Login/Login.jsx';
+import Signup from './pages/Signup/Signup.jsx';
+import Events from './pages/Events/Events.jsx';
+import SingleEvent from './pages/SingleEvent/SingleEvent.jsx';
+import Interested from './pages/Interested/Interested.jsx';
+import AddEvent from './pages/AddEvent/AddEvent.jsx';
 
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import './App.css';
 
 const httpLink = createHttpLink({
@@ -39,15 +46,42 @@ const App = () => {
   return (
   <ApolloProvider client={client}>
       <Router>
+      <div>
           <Navbar />
             <Routes>
               <Route 
-                path="*" 
+                path="/" 
                 element={<Home />} 
+              />
+              <Route 
+                path="/login" 
+                element={<Login />} 
+              />
+               <Route 
+                path="/signup" 
+                element={<Signup />} 
+              /> 
+                <Route 
+                path="/events" 
+                element={<Events/>} 
+              />
+              <Route 
+                path="/events/:eventId" 
+                element={<SingleEvent />} 
+              />
+                <Route 
+                path="/interested" 
+                element={<Interested />} 
+              />
+              <Route 
+                path="/addevent" 
+                element={<AddEvent />} 
               />
             </Routes>
           <Footer />
+          </div>
       </Router>
+      
   </ApolloProvider>
   )
   };

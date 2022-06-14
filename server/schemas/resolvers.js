@@ -2,7 +2,6 @@ const { AuthenticationError } = require("apollo-server-express");
 const { Profile } = require("../models");
 const { Event } = require("../models");
 const { Location } = require("../models");
-const { Interested } = require("../models");
 
 const { signToken } = require("../utils/auth");
 
@@ -11,6 +10,7 @@ const resolvers = {
     // profiles: async () => {
     //   return Profile.find().populate({
     //     path: "allinterested.events",
+    //     path: "eventsCreated",
     //     populate: "location",
     //   });
     // },
@@ -24,18 +24,17 @@ const resolvers = {
     // By adding context to our query, we can retrieve the logged in user without specifically searching for them
     me: async (parent, args, context) => {
       if (context.user) {
-        return Profile.findOne({ _id: context.user._id }).populate({
-          path: "allinterested.events",
-          populate: "location",
-        });
+        return Profile.findOne({ _id: context.user._id }).populate(
+          "savedEvents"
+        );
       }
       throw new AuthenticationError("You need to be logged in!");
     },
     events: async () => {
       return Event.find().populate("location");
     },
-    event: async (parent, { _id }) => {
-      return await Event.findById(_id).populate("location");
+    event: async (parent, { eventId }) => {
+      return Event.findOne({ _id: eventId }).populate("location");
     },
     locations: async () => {
       return await Location.find();
@@ -55,16 +54,6 @@ const resolvers = {
 
       return await Event.find(params).populate("location");
     },
-    interested: async (parent, { _id }, context) => {
-      if (context.user) {
-        const profile = await Profile.findById(context.profile._id).populate({
-          path: "allinterested.events",
-          populate: "location",
-        });
-        return profile.allinterested.id(_id);
-      }
-      throw new AuthenticationError("Not logged in");
-    },
   },
 
   Mutation: {
@@ -75,12 +64,12 @@ const resolvers = {
       return { token, profile };
     },
     login: async (parent, { email, password }) => {
-      const profile = await Profile.findOne({ email });
+      const profile = await Profile.findOne({ email }).populate("savedEvents");
 
       if (!profile) {
         throw new AuthenticationError("No profile with this email found!");
       }
-
+      s;
       const correctPw = await profile.isCorrectPassword(password);
 
       if (!correctPw) {
@@ -99,28 +88,18 @@ const resolvers = {
       throw new AuthenticationError("You need to be logged in!");
     },
 
-    updateEvent: async (parent, { _id, quantity }) => {
-      const decrement = Math.abs(quantity) * -1;
-
-      return await Event.findByIdAndUpdate(
-        _id,
-        { $inc: { quantity: decrement } },
-        { new: true }
-      );
-    },
-    addInterested: async (parent, { events }, context) => {
-      console.log(context);
-      if (context.user) {
-        const interested = new Interested({ events });
-
-        await User.findByIdAndUpdate(context.user._id, {
-          $push: { allinterested: interested },
-        });
-
-        return interested;
+    saveEvent: async (_, { eventId }, context) => {
+      if (!context.user) {
+        throw new AuthenticationError("You need to be logged in!");
       }
 
-      throw new AuthenticationError("Not logged in");
+      const updatedProfile = await Profile.findOneAndUpdate(
+        { _id: context.user._id },
+        { $addToSet: { savedEvents: eventId } },
+        { new: true, runValidators: true }
+      ).populate("savedEvents");
+
+      return updatedProfile;
     },
   },
 };

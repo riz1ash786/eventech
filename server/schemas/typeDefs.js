@@ -1,32 +1,50 @@
 const { gql } = require("apollo-server-express");
 
 const typeDefs = gql`
-  type Interested {
-    _id: ID
-    events: [Event]
-  }
-
   type Profile {
     _id: ID
     name: String
     email: String
     password: String
-    allinterested: [Interested]
+    savedCount: Int
+    savedEvents: [Event]
   }
+
   type Location {
     _id: ID
     name: String
   }
+
   type Event {
     _id: ID
-    name: String
+    title: String
     description: String
     whyattend: String
     image: String
-    quantity: Int
     price: Float
+    link:String
     location: Location
+    username: String
+    comments: [Comment]!
+    likes: [like]!
+    likeCount: Int!
+    commentCount: Int!
+    profile: Profile
   }
+
+  type like {
+    id: ID!
+    createdAt: String!
+    username: String!
+  }
+
+  type Comment {
+    _id: ID!
+    createdAt: String!
+    username: String!
+    body: String!
+  }
+  
   type Auth {
     token: ID!
     profile: Profile
@@ -37,18 +55,15 @@ const typeDefs = gql`
     me: Profile
     events: [Event]!
     eventsByLocation(location: ID!, name: String): [Event]
-    event(_id: ID!): Event
+    event(eventId: ID!): Event
     locations: [Location]
-    interested(_id: ID!): Interested
   }
 
   type Mutation {
     addProfile(name: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
     removeProfile: Profile
-    updateEvent(_id: ID!, quantity: Int!): Event
-    addInterested(events: [ID]!): Interested
-  }
-`;
+    saveEvent(eventId: ID!): Profile
+  }`;
 
 module.exports = typeDefs;
