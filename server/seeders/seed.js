@@ -29,22 +29,24 @@ db.once("open", async () => {
         link: "https://events.broad-group.com/event/a4ba77f1-52e2-4570-a6f5-d442cd3eca93/summary",
         location: locations[1]._id,
         price: 60,
-        // username: "username",
-        // createdAt: "Date here",
-        // going: [
-        //   {
-        //     username: "username",
-        //     createdAt: "Date"
-        //   }
-        // ],
-        // comments: [
-        //   {
-        //     body: "hello",
-        //     username: "username",
-        //     createdAt: "Date"
-        //   }
-        // ],
-        // // profile: profile[0]._id
+        comments: [
+          {
+            body: "Wow, this was a great experience, the location is amazing, and the conference does not disappoint! I will be going again next year!",
+            name: "Nadine",
+            createdAt:"03-04-2022"
+          },
+          {
+            body: "The event really lives up to the hype!",
+            name:"Rizwan",
+            createdAt:"17-07-2021"
+          },
+          {
+            body: "A great place to network and meet a lot of very knowledgeable tech minds! ",
+            name:"Danielle",
+            createdAt:"25-06-2021"
+          },
+        ],
+      // profile: profile[0]
       },
       {
         title: "ISE 2022",
@@ -56,6 +58,24 @@ db.once("open", async () => {
         link: "https://www.iseurope.org/location-and-opening-hours/",
         location: locations[1]._id,
         price: 70,
+        comments: [
+          {
+            body: 
+            "I go to the ISE event every year; I am one of the exhibitors and love sharing my knowledge and experiences with people who are interested in learning more about the technical field.",
+            name: "Emma",
+            createdAt:"17-07-2021"
+          },
+          {
+            body: "A great range of stands and people of different backgrounds and skillsets and overall, a pleasant experience! ",
+            name:"Claire",
+            createdAt:"16-04-2021"
+          },
+          {
+            body: "Highly recommended I will definitely be going here again next year!",
+            name:"Adam",
+            createdAt:"11-03-2020"
+          },
+        ],
       },
       {
         title: "Technology & Services World",
@@ -67,6 +87,19 @@ db.once("open", async () => {
         image: "tsia.png",
         link: "https://www.tsia.com/conference-pricing",
         price: 55,
+        comments: [
+          {
+            body: "I’ve been to a number of TSIA events in different locations, and I must say this one has been my favourite!!",
+            name: "Sara",
+            createdAt:"14-05-2021"
+          },
+          {
+            body: "I’ve just spent the day at the TSIA event, and I can’t say I enjoyed it very much. I tried my best to meet new people and build my network, but everyone was just so busy. The event was packed full and there were not many places to sit and have a break! ",
+            name:"Tracey",
+            createdAt:"17-01-2020"
+
+          },
+        ],
       },
       {
         title: "Computex 2022",
@@ -78,6 +111,18 @@ db.once("open", async () => {
         image: "computex.jpg",
         link: "https://computex.net/",
         price: 90,
+        comments: [
+          {
+            body: "A great event! Lots to do and free access is a bonus!            ",
+            name: "Ryan",
+            date:"16-04-2021"
+          },
+          {
+            body: "We really benefited going to the Computex event, easy access and a great range of services on offer!",
+            name:"Anna",
+            date:"12-02-2020"
+          },
+        ],
       },
       {
         title: "RSA Conference 2022",
@@ -89,6 +134,19 @@ db.once("open", async () => {
           "Hear from industry leaders on how to place resilience at the forefront of your cyber strategy and prepare for security challenges of the new normal.",
         image: "rsa.jpeg",
         price: 70,
+        comments: [
+          {
+            body: "I thought it was very informative!",
+            name: "Ben",
+            date:"12-02-2022"
+          },
+          {
+            body: "This event was very interesting with a great panel of speakers.",
+            name:"Maria",
+            date:"10-08-2020"
+
+          },
+        ],
       },
       {
         title: "London Tech Week",
@@ -100,6 +158,19 @@ db.once("open", async () => {
           "At London Tech Week, there's something for everyone, with events on topics from AI and 5G to quantum computing, the future of work and more.",
         image: "london-tech-week.png",
         price: 80,
+        comments: [
+          {
+            body: "One of the best Technology conferences I’ve been to in a long time!",
+            name: "Richard",
+            date:"12-02-2022"
+          },
+          {
+            body: "It’s great, easy to get to and the event has lots to offer – highly recommend!",
+            name:"Simon",
+            date:"05-10-2021"
+
+          },
+        ],
       },
       {
         title: "Dublin Tech Summit",
@@ -111,6 +182,23 @@ db.once("open", async () => {
           " Hear from 200+ speakers and connect with 8,000 fellow attendees from 60+ countries. There will be more than 80 conference sessions across four stages, covering topics such as space tech, emerging tech, growth and much more!",
         image: "dublin.png",
         price: 85,
+        comments: [
+          {
+            body: "This event has really grown and improved from when I went a few years ago! ",
+            name: "Stephanie",
+            date:"12-02-2020"
+          },
+          {
+            body: "If you are thinking of going, then I would definitely advise you to give it a go! I managed to meet lots of people and I even secured a few job interviews!",
+            name:"Claudia",
+            date:"02-12-2019"
+          },
+          {
+            body: "Enjoyable, educational and lots of freebies, what’s not to love! See you again next year!",
+            name:"Julia",
+            date:"08-05-2018"
+          },
+        ],
       },
       {
         title: "Cloudflare Connect",
@@ -122,6 +210,23 @@ db.once("open", async () => {
           " Keynotes and learning sessions from special guests, demos, hands-on labs, and real-world use cases. There will be exclusive breakout rooms for in-person attendees, with keynote sessions available to attend virtually for free. In addition to cybersecurity and digital network experts, speakers will include Cloudflare’s CTO, John Graham-Cumming.",
         image: "cloudfare.jpg",
         price: 75,
+        comments: [
+          {
+            body: "Very informative but a little boring – the event lacked the excitement, maybe I was expecting too much?",
+            name: "Tiffany",
+            date:"08-05-2022"
+          },
+          {
+            body: "An education event with no fuss! A great environment and lots of interesting people to talk to!",
+            name:"Julie",
+            date:"10-06-2021"
+          },
+          {
+            body: "It wasn’t for me, I found it difficult to talk to people and get the answers that I was looking for. ",
+            name:"Angela",
+            date:"19-02-2020"
+          },
+        ],
       },
       {
         title: "Infosecurity Europe",
@@ -133,6 +238,18 @@ db.once("open", async () => {
           "In an industry characterised by constant change, it's vital to keep abreast of all the latest developments. Infosecurity Europe is designed to help you do just that.",
         image: "is.jpg",
         price: 60,
+        comments: [
+          {
+            body: "This was amazing! So much on offer and really cool people to meet! I’ve just finished University and it was very confident inspiring to see others doing so well in this field. I gained some great advice from the people I met!",
+            name: "Mike",
+            date:"19-02-2021"
+          },
+          {
+            body: "A great event, friendly people who are happy to speak to you and so much to learn! I highly recommend this to anyone who is thinking about going!",
+            name:"Katie",
+            date:"01-02-2020"
+          },
+        ],
       },
       {
         title: "Black Hat USA 2022",
@@ -144,6 +261,23 @@ db.once("open", async () => {
           "Receive the latest information in security research, development and trends in a strictly vendor-neutral environment.",
         image: "black-hat.png",
         price: 80,
+        comments: [
+          {
+            body: "The event was not what I was expecting, I am not sure if I would go again – I wish there were more stands, and it could have lasted longer.",
+            name: "Max",
+            date:"19-05-2022"
+          },
+          {
+            body: "I agree with the comment above about it being too short, but I did benefit from the people that I met!",
+            name: "Matt",
+            date:"18-02-2022"
+          },
+          {
+            body: "Enjoyable, educational and lots of freebies, what’s not to love! See you again next year!",
+            name:"Nadine",
+            date:"19-02-2020"
+          },
+        ],
       },
       {
         title: "IFA Berlin",
@@ -155,6 +289,18 @@ db.once("open", async () => {
           "With many businesses avoiding the show last year due to the pandemic, it's possible IFA 2022 will yield a bumper crop of amazing and wacky tech.",
         image: "berlin.jpg",
         price: 90,
+        comments: [
+          {
+            body: "Fantastic, I went to this event to broaden my knowledge about the jobs market with the intention to meet people and grow my network! I managed to hand out my CV to quite a lot of people which was great!",
+            name: "Jessica",
+            date:"10-03-2022"
+          },
+          {
+            body: "I went to this event after being recommended it from a few colleagues at work. I am glad to say it was a great event and I thoroughly enjoyed meeting like-minded people.",
+            name:"Carla",
+            date:"19-02-2020"
+          },
+        ],
       },
       {
         title: "GITEX Global",
@@ -166,6 +312,23 @@ db.once("open", async () => {
           "You'll get access to conference programmes with over 1000 expert speakers, 4000 exhibitors and more than 200 government entities from 170 countries.",
         image: "gitex.png",
         price: 7.99,
+        comments: [
+          {
+            body: "Wow, what can I say surely the biggest and most impressive event I have been to! Dubai does not disappoint, the effort that the organisers have put it is amazing. Lots to learn, see and experience!",
+            name: "John",
+            date:"19-02-2022"
+          },
+          {
+            body: "Such a huge venue with so much going on! Great guest speakers and opportunities to meet people. The only thing I would say is that you need the whole day to get around here!",
+            name:"Emily",
+            date:"29-03-2020"
+          },
+          {
+            body: "GITEX Dubai – 5-star event with great stands and amazing visuals! The event is huge and difficult to experience everything in one day so I would advise to plan well before arrival!",
+            name:"Anna",
+            createdAt:"04-02-2018"
+          },
+        ],
       },
     ]);
 

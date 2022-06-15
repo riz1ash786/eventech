@@ -24,20 +24,25 @@ const typeDefs = gql`
     price: Float
     link:String
     location: Location
-    username: String
-    comments: [Comment]!
-    likeCount: Int!
-    commentCount: Int!
     profile: Profile
-  }
-
-  type Comment {
-    _id: ID!
-    createdAt: String!
-    username: String!
-    body: String!
+    comments:[Comment]!
+    commentCount: Int
+    likes:[Like]!
   }
   
+  type Comment{
+    _id:ID
+    createdAt: String
+    name:String
+    body: String
+  }
+
+  type Like{
+    _id:ID
+    createdAt: String
+    name:String
+  }
+
   type Auth {
     token: ID!
     profile: Profile
@@ -58,6 +63,9 @@ const typeDefs = gql`
     removeProfile: Profile
     saveEvent(eventId: ID!): Profile
     deleteSaved(eventId: ID!): Profile
+    createComment(eventId:ID!, body:String!): Event!
+    deleteComment(eventId: ID!, commentId: ID!): Event!
+    likePost(eventId: ID!): Event!
   }`;
 
 module.exports = typeDefs;

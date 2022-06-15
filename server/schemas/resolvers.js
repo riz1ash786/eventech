@@ -31,7 +31,7 @@ const resolvers = {
       throw new AuthenticationError("You need to be logged in!");
     },
     events: async () => {
-      return Event.find().populate("location");
+      return Event.find().populate("location").populate("profile");
     },
     event: async (parent, { eventId }) => {
       return Event.findOne({ _id: eventId }).populate("location");
@@ -115,9 +115,22 @@ const resolvers = {
       ).populate("savedEvents");
       return updatedProfile;
     },
-
   },
 
+  // createComment: async(_,{eventId, body}, context) =>{
+  //   if (!context.user) {
+  //     throw new AuthenticationError("You need to be logged in!");
+  //   }
+  //   const {name} = context.user.name;
+  //   const event = await Event.findById(eventId);
+  //     event.comments.unshift({
+  //       body,
+  //       name,
+  //       createdAt: new Date().toISOString()
+  //     })
+  //     await event.save();
+  //     return event;
+  // }
   
 };
 
