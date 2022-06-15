@@ -57,3 +57,92 @@ h6 {
       font-family: var(--font2);
   }
 
+
+.interactions{
+    margin-top:30px;
+}
+
+.interactions button{
+    background-color: transparent;
+    border-width: 0;
+    color:rgb(233, 224, 194);
+    font-size:20px;
+    font-weight: 100;
+    letter-spacing: 1px;
+    text-transform:capitalize;
+}
+
+.interactions button{
+   margin-right:60px;
+}
+
+
+.mt-100{
+    margin-top: 100px
+}
+.mb-100{
+    margin-bottom:100px
+}
+
+.comment-widgets{
+   position: relative;
+   margin-bottom: 10px
+}
+.comment-widgets
+ .comment-row{
+     border-bottom: 1px solid transparent;
+     padding: 14px;
+     display: -webkit-box;
+     display: -ms-flexbox;
+     display: flex;
+     margin: 10px 0
+    }
+.p-2{
+    padding: 0.5rem !important
+}
+.comment-text{
+    padding-left: 15px
+}
+.w-100{
+    width: 100% !important
+}
+.m-b-15{
+    margin-bottom: 15px
+}
+.btn-sm {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.76563rem;
+    line-height: 1.5
+    ;border-radius: 1px
+}
+
+.comment-widgets 
+.comment-row:hover{
+    background: rgba(0, 0, 0, 0.05)
+}
+
+.comment-btn{
+    margin-left:80%;
+}
+
+.font-medium{
+    letter-spacing: 0.05rem;
+    color:rgb(232, 179, 114);
+}
+
+.text-muted{
+    color:darkgray;
+}
+
+.chat-icon{
+    margin-right:15px;
+}
+.post-btn{
+margin-top:10px;
+margin-bottom:10px;
+}
+
+
+
+
+

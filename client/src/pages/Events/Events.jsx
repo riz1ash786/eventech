@@ -29,7 +29,6 @@ const Events = () => {
       {events&& 
         events.map((oneevent)=> (
               <>
-      
        <article className="project-item" key={oneevent._id}>
           <div className="project-item-img">
             <img src={`/images/${oneevent.image}`} alt={oneevent.title}></img>

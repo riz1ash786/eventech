@@ -21,9 +21,9 @@ const Locations = () => {
             ) : (
               <>
       {locations&& 
-        locations.map((onelocation)=> (
+        locations.map((onelocation, j)=> (
               <>
-        <button className="tags">{onelocation.name}</button>
+        <button className="tags" key={`${onelocation._id}-${j}`}>{onelocation.name}</button>
         </>
               ))}
               </>

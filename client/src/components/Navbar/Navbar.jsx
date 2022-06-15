@@ -48,15 +48,6 @@ const Navbar = () => {
        
         {Auth.loggedIn() ? (
           <>
-
-         <Link to="/addevent">
-          <li className="small-parag">
-             <button className="logout-btn">
-               Add Event
-              </button>
-          </li>
-          </Link>
-
            <li className="small-parag">
              <button onClick={logout} className="logout-btn">
                Logout
@@ -110,14 +101,13 @@ const Navbar = () => {
               </li>
               {Auth.loggedIn() ? (
                 <>
-           
-                <Link to="/addevent">
-                 <li className="small-parag">
-                   <button className="logout-btn" onClick={()=>  setToggleMenu(false)}>
-                        Add Event
-                    </button>
+
+              <li className="small-parag">
+                   <Link to="/interested" onClick={()=>  setToggleMenu(false)}>     
+                  
+                     Favorites
+                     </Link> 
                  </li>
-                 </Link>
 
                  <li className="small-parag" onClick={logout}>
                    <button className="logout-btn" onClick={()=>  setToggleMenu(false)}>
@@ -126,14 +116,7 @@ const Navbar = () => {
                  </li>
 
 
-                 <li className="small-parag heart">
-                   <Link to="/interested" onClick={()=>  setToggleMenu(false)}>     
-                        <AiOutlineHeart
-                        fontSize={35}
-                     />
-                     Favorites
-                     </Link> 
-                 </li>
+           
 
 
               </>
