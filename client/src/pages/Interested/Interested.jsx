@@ -1,53 +1,71 @@
-import React, { useEffect } from "react";
+import React, { useEffect} from "react";
+import {useState, useParams, useNavigate } from "react-router-dom";
 import "./Interested.css";
-import conference from "../../assets/saved.png";
-import { AiOutlineHeart } from "react-icons/ai";
+import "../Events/Events.css"
 import { useQuery } from "@apollo/client";
+import { useMutation } from "@apollo/client";
+
 import { QUERY_SAVED_EVENTS } from "../../utils/queries";
+import { DELETE_SAVED } from "../../utils/mutations";
+
+import { Link } from 'react-router-dom';
+import {MdDeleteOutline} from "react-icons/md"
 
 const Interested = () => {
-  const { data, loading } = useQuery(QUERY_SAVED_EVENTS, {
+
+  const { eventId } = useParams();
+
+  const [deleteSaved, { loading: deleteSavedLoading }] = useMutation(DELETE_SAVED);
+  const handleDeleteSaved = async () => {
+    deleteSaved({
+      variables: {
+        eventId: eventId,
+      },
+    });
+  };
+
+  const { data, loading: savedEventsLoading } = useQuery(QUERY_SAVED_EVENTS, {
     fetchPolicy: "network-only",
   });
-
+  const loading = savedEventsLoading || deleteSavedLoading;
   useEffect(() => {
     console.log("The component mounted");
-
     return () => {
       console.log("the compoment unmounted");
     };
   }, []);
 
+
   return loading ? (
     <div>...Loading</div>
   ) : (
     <>
-      <div>
+      <>
         <h1 className="custom-int-h1"> Your Favorite Events</h1>
-      </div>
-
-      <div className="custom-header custom-wrap padding-section" id="home">
-        <div className="info-wrap">
-          <section className="saved-section">
-            <div className="container int-container">
+      </>
+      <section>
+         <div className="container project-container">
               {data.me.savedEvents.map((savedEvent, i) => (
-                <article className="saved-event" key={`${savedEvent._id}-${i}`}>
+                <article className="project-item" key={`${savedEvent._id}-${i}`}>
+                  <div className="project-item-img">
+                  <img src={`/images/${savedEvent.image}`} alt={savedEvent.title}></img>
+                  </div>
                   <h3>{savedEvent.title}</h3>
-                  <h2>{savedEvent.location.name}</h2>
-                  <h2>23/07/22</h2>
-                  <div className="heart-2">
-                    <AiOutlineHeart fontSize={50} />
+                  <p className="saved-description">{savedEvent.description}</p>
+                  <div className="project-item-cta">
+                 <Link to={`/events/${savedEvent._id}`} className="btn-1"> Find out more </Link> 
+                <a href={savedEvent.link} className="btn-1"> Book Now </a>  
+                </div>
+                
+                <div className="bin">
+                  <button>
+                    <MdDeleteOutline fontSize={40} />
+                  </button>
                   </div>
                 </article>
               ))}
             </div>
-          </section>
-        </div>
-
-        <div className="img-wrap">
-          <img src={conference} alt="header_img" />
-        </div>
-      </div>
+        </section>
     </>
   );
 };

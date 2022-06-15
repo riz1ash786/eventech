@@ -101,7 +101,24 @@ const resolvers = {
 
       return updatedProfile;
     },
+
+
+    deleteSaved: async (_, { eventId }, context) => {
+      if (!context.user) {
+        throw new AuthenticationError("You need to be logged in!");
+      }
+
+      const updatedProfile = await Profile.findOneAndUpdate(
+        { _id: context.user._id },
+        { $pull: { savedEvents: eventId } },
+        { new: true, runValidators: true }
+      ).populate("savedEvents");
+      return updatedProfile;
+    },
+
   },
+
+  
 };
 
 module.exports = resolvers;

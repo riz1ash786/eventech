@@ -33,3 +33,14 @@ export const SAVE_EVENT = gql`
     }
   }
 `;
+
+
+export const DELETE_SAVED = gql`
+  mutation deleteSaved($eventId: ID!) {
+    deleteSaved(eventId: $eventId) {
+      savedEvents {
+        _id
+      }
+    }
+  }
+`;
