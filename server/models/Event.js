@@ -8,9 +8,6 @@ const eventSchema = new Schema({
     required: true,
     trim: true,
   },
-  username:{
-    type:String,
-  },
   description: {
     type: String,
   },
@@ -36,17 +33,25 @@ const eventSchema = new Schema({
   createdAt:{
     type:String,
   },
-  comments:[
-    {
-      body: String,
-      username: String,
-      createdAt: String,
-    }
-  ],
   profile: {
     type: Schema.Types.ObjectId,
     ref: 'Profile'
-  }
+  },
+  comments:[{
+    body: String,
+    name:String,
+    createdAt:String,
+  }],
+  likes:[
+    {
+    type: Schema.Types.ObjectId,
+    ref:'Profile'
+    }
+  ]
+});
+
+eventSchema.virtual("commentCount").get(function () {
+  return this.comments.length;
 });
 
 const Event = mongoose.model("Event", eventSchema);
