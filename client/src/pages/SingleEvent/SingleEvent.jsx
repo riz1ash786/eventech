@@ -1,10 +1,11 @@
 import React, { useEffect } from "react";
-import { useState, useParams, useNavigate } from "react-router-dom";
+import {useState, useParams, useNavigate } from "react-router-dom";
 import Auth from "../../utils/auth.js";
 import { QUERY_SINGLE_EVENT } from "../../utils/queries";
 import { SAVE_EVENT } from "../../utils/mutations";
 import { useMutation } from "@apollo/client";
 import { useQuery } from "@apollo/client";
+import { Link } from 'react-router-dom';
 
 import "./SingleEvent.css";
 
@@ -24,6 +25,7 @@ const SingleEvent = () => {
       navigate("/login");
     }
   }, []);
+
 
   const handleSaveEvent = async () => {
     debugger;
@@ -70,9 +72,14 @@ const SingleEvent = () => {
           <button className="book">
             <a href={event.link}>Book Now</a>
           </button>
+
+          
           <button className="book" onClick={handleSaveEvent}>
-            Save Event
+          <Link to="/events">
+            Save & See More
+            </Link>
           </button>
+          
         </div>
       </div>
     </div>
