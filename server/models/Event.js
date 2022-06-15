@@ -43,12 +43,6 @@ const eventSchema = new Schema({
       createdAt: String,
     }
   ],
-  likes: [
-    {
-      username: String,
-      createdAt: String,
-    }
-  ],
   profile: {
     type: Schema.Types.ObjectId,
     ref: 'Profile'

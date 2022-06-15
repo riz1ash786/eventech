@@ -34,6 +34,7 @@ const SingleEvent = () => {
         eventId,
       },
     });
+    window.location.reload(true);
   };
 
   return loading ? (

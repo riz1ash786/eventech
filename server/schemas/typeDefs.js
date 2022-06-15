@@ -26,16 +26,9 @@ const typeDefs = gql`
     location: Location
     username: String
     comments: [Comment]!
-    likes: [like]!
     likeCount: Int!
     commentCount: Int!
     profile: Profile
-  }
-
-  type like {
-    id: ID!
-    createdAt: String!
-    username: String!
   }
 
   type Comment {

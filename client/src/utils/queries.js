@@ -58,6 +58,7 @@ export const QUERY_ALL_LOCATIONS = gql`
 export const QUERY_SAVED_EVENTS = gql`
   query QUERY_SAVED_EVENTS {
     me {
+      savedCount
       savedEvents {
         _id
         title

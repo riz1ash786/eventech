@@ -4,7 +4,6 @@ import "./Interested.css";
 import "../Events/Events.css"
 import { useQuery } from "@apollo/client";
 import { useMutation } from "@apollo/client";
-
 import { QUERY_SAVED_EVENTS } from "../../utils/queries";
 import { DELETE_SAVED } from "../../utils/mutations";
 
@@ -41,7 +40,7 @@ const Interested = () => {
   ) : (
     <>
       <>
-        <h1 className="custom-int-h1"> Your Favorite Events</h1>
+        <h1 className="custom-int-h1"> You have {data.me.savedCount} Events Saved</h1>
       </>
       <section>
          <div className="container project-container">
