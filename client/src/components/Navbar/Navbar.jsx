@@ -1,4 +1,6 @@
 import React from 'react';
+import {useState, useParams, useNavigate } from "react-router-dom";
+
 import { CgClose } from 'react-icons/cg';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import eventech from '../../assets/eventech.png';
@@ -6,6 +8,8 @@ import './Navbar.css';
 import { Link } from "react-router-dom";
 import Auth from '../../utils/auth';
 import {AiOutlineHeart} from 'react-icons/ai';
+import { QUERY_SAVED_EVENTS } from "../../utils/queries";
+import { useQuery } from "@apollo/client";
 
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = React.useState(false);
@@ -13,7 +17,13 @@ const Navbar = () => {
     event.preventDefault();
     Auth.logout();
   };
-  return (
+  const { data, loading} = useQuery(QUERY_SAVED_EVENTS, {
+    fetchPolicy: "network-only",
+  });
+
+  return (loading ? (
+    <div>...Loading</div>
+  ) :
     <nav className="custom-navbar">
       {/* Logo */}
      
@@ -39,7 +49,6 @@ const Navbar = () => {
         {Auth.loggedIn() ? (
           <>
 
-
          <Link to="/addevent">
           <li className="small-parag">
              <button className="logout-btn">
@@ -55,14 +64,14 @@ const Navbar = () => {
           </li>
 
       <li className="small-parag heart">
-          <Link to="/interested">     
+          <Link to="/interested">
+          {data.me.savedCount}     
         <AiOutlineHeart
           fontSize={35}
         /></Link> 
      </li>
    
-
-          </>
+       </>
         ):(
           <>
           <li className="small-parag">
@@ -119,9 +128,11 @@ const Navbar = () => {
 
                  <li className="small-parag heart">
                    <Link to="/interested" onClick={()=>  setToggleMenu(false)}>     
-                       <AiOutlineHeart
+                        <AiOutlineHeart
                         fontSize={35}
-                     /></Link> 
+                     />
+                     Favorites
+                     </Link> 
                  </li>
 
 
@@ -141,6 +152,7 @@ const Navbar = () => {
         )}
       </div>
     </nav>
+
   );
 };
 

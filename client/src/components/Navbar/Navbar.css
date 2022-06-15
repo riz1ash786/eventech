@@ -93,10 +93,12 @@
 
 
 .heart a{
-  color: var(--color-gold);
+  color:rgb(171, 161, 163);
 }
+.custom-navbar-smallscreen-links .heart{
+  margin-top:50px;
 
-
+}
 
 @media screen and (min-width: 2000px) {
   .custom-navbar-logo img {
