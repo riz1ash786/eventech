@@ -28,7 +28,7 @@ const SingleEvent = () => {
   }, []);
 
   const handleSaveEvent = async () => {
-    debugger;
+    // debugger;
     saveEvent({
       variables: {
         eventId,
@@ -82,11 +82,11 @@ const SingleEvent = () => {
             <div className="interactions">
               <button>
                 {" "}
-                <BiLike /> 20 - people interested{" "}
+                <BiLike /> 20- people interested{" "}
               </button>
               <button>
                 {" "}
-                <FaRegComments /> 10 - join discussion below{" "}
+                <FaRegComments /> {event.commentCount} - join discussion below{" "}
               </button>
             </div>
 
@@ -103,56 +103,28 @@ const SingleEvent = () => {
             </div>
             <div className="comment-widgets">
 
-
+        {event.comments.map((comments)=> (
 
               <div className="d-flex flex-row comment-row">
                 <div className="p-2"></div>
                 <div className="comment-text active w-100">
-                  <h6 className="font-medium"><BsFillChatDotsFill className="chat-icon"/>Nadine</h6>{" "}
+                  <h6 className="font-medium"><BsFillChatDotsFill className="chat-icon"/> {comments.name}</h6>{" "}
                   <span className="m-b-15 d-block">
-                  This event was very interesting with a great panel of speakers.{" "}
+                  {comments.body}{" "}
                   </span>
                   <div className="comment-footer">
                     {" "}
                     <span className="text-muted float-right">
-                      June 30, 2021
+                    {comments.createdAt}
                     </span>{" "}
 
                   </div>
                 </div>
               </div>
-       
-              <div className="d-flex flex-row comment-row">
-                <div className="p-2"></div>
-                <div className="comment-text active w-100">
-                  <h6 className="font-medium"><BsFillChatDotsFill className="chat-icon"/>Rizwan</h6>{" "}
-                  <span className="m-b-15 d-block">
-                  It’s great, easy to get to and the event has lots to offer – highly recommended{" "}
-                  </span>
-                  <div className="comment-footer">
-                    {" "}
-                    <span className="text-muted float-right">
-                      July 04, 2021
-                    </span>{" "}
-                  </div>
-                </div>
-              </div>
+))}
 
-              <div className="d-flex flex-row comment-row">
-                <div className="p-2"></div>
-                <div className="comment-text active w-100">
-                  <h6 className="font-medium"><BsFillChatDotsFill className="chat-icon"/>Joe</h6>{" "}
-                  <span className="m-b-15 d-block">
-                  One of the best Technology conferences I’ve been to in a long time!{" "}
-                  </span>
-                  <div className="comment-footer">
-                    {" "}
-                    <span className="text-muted float-right">
-                      May 10, 2020
-                    </span>{" "}
-                  </div>
-                </div>
-              </div>
+
+
 
 
             </div>
