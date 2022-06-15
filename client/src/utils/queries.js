@@ -38,6 +38,13 @@ export const QUERY_SINGLE_EVENT = gql`
       image
       price
       link
+      commentCount
+      comments{
+        _id
+        name
+        createdAt
+        body
+      }
       location {
         _id
         name
