@@ -64,6 +64,7 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
     removeProfile: Profile
     saveEvent(eventId: ID!): Profile
+    deleteSaved(eventId: ID!): Profile
   }`;
 
 module.exports = typeDefs;
