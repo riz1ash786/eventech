@@ -22,21 +22,19 @@ const typeDefs = gql`
     whyattend: String
     image: String
     price: Float
-    link:String
+    link: String
     location: Location
-    profile: Profile
-    comments:[Comment]!
+    comments: [Comment]!
     commentCount: Int
     likeCount: Int
   }
-  
-  type Comment{
-    _id:ID
+
+  type Comment {
+    _id: ID
     createdAt: String
-    name:String
+    author: String
     body: String
   }
-
 
   type Auth {
     token: ID!
@@ -58,8 +56,9 @@ const typeDefs = gql`
     removeProfile: Profile
     saveEvent(eventId: ID!): Profile
     deleteSaved(eventId: ID!): Profile
-    createComment(eventId:ID!, body:String!): Event!
+    createComment(eventId: ID!, body: String!): Event!
     deleteComment(eventId: ID!, commentId: ID!): Event!
-    }`;
+  }
+`;
 
 module.exports = typeDefs;
