@@ -6,17 +6,17 @@ import {  useParams} from "react-router-dom";
 import {IoMdArrowBack} from "react-icons/io"
 import "./ByLocation.css"
 const ByLocation = () => {
-//     const { location } = useParams();
-//     console.log(location)
-//     const { loading, data } = useQuery(QUERY_EVENTS_BYLOCATION, {
-//        variables: { location: location},
-//       });
+    const { location } = useParams();
+    console.log(location)
+    const { loading, data } = useQuery(QUERY_EVENTS_BYLOCATION, {
+       variables: { location: location},
+      });
 
-//     const events = data?.eventsByLocation || [];
-//     // if (!events.length) {
-//     //     return <h3>No Events Yet</h3>;
-//     //   }
-// return(
+    const events = data?.eventsByLocation || [];
+    // if (!events.length) {
+    //     return <h3>No Events Yet</h3>;
+    //   }
+return(
     <div>
        <section className="tags-section-1">
             <div className="tags-container-1">
