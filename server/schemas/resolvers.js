@@ -1,4 +1,6 @@
 const { AuthenticationError } = require("apollo-server-express");
+const mongoose = require("mongoose");
+
 const { Profile } = require("../models");
 const { Event } = require("../models");
 const { Location } = require("../models");
@@ -31,7 +33,7 @@ const resolvers = {
       throw new AuthenticationError("You need to be logged in!");
     },
     events: async () => {
-      return Event.find().populate("location").populate("profile");
+      return Event.find().populate("location");
     },
     event: async (parent, { eventId }) => {
       return Event.findOne({ _id: eventId }).populate("location");
@@ -63,7 +65,7 @@ const resolvers = {
       if (!profile) {
         throw new AuthenticationError("No profile with this email found!");
       }
-      s;
+
       const correctPw = await profile.isCorrectPassword(password);
 
       if (!correctPw) {
@@ -96,36 +98,59 @@ const resolvers = {
       return updatedProfile;
     },
 
-
     deleteSaved: async (_, { eventId }, context) => {
       if (!context.user) {
         throw new AuthenticationError("You need to be logged in!");
       }
+
+      await Event.deleteOne({ _id: context.user._id });
 
       const updatedProfile = await Profile.findOneAndUpdate(
         { _id: context.user._id },
         { $pull: { savedEvents: eventId } },
         { new: true, runValidators: true }
       ).populate("savedEvents");
+
       return updatedProfile;
+    },
+
+    createComment: async (_, { eventId, body }, context) => {
+      if (!context.user) {
+        throw new AuthenticationError("You need to be logged in!");
+      }
+
+      console.log("User id: ", context.user._id);
+
+      const comment = {
+        author: context.user.name,
+        body,
+      };
+
+      console.log("comment");
+
+      return await Event.findOneAndUpdate(
+        { _id: eventId },
+        {
+          $addToSet: { comments: comment },
+        },
+        {
+          new: true,
+          runValidators: true,
+        }
+      );
     },
   },
 
-  // createComment: async(_,{eventId, body}, context) =>{
-  //   if (!context.user) {
-  //     throw new AuthenticationError("You need to be logged in!");
+  // deleteComment: async (parent, { comment, eventId }, context) => {
+  //   if (context.user) {
+  //     return Event.findOneAndUpdate(
+  //       { _id: eventId },
+  //       { $pull: {comments: comment } },
+  //       { new: true }
+  //     );
   //   }
-  //   const {name} = context.user.name;
-  //   const event = await Event.findById(eventId);
-  //     event.comments.unshift({
-  //       body,
-  //       name,
-  //       createdAt: new Date().toISOString()
-  //     })
-  //     await event.save();
-  //     return event;
-  // }
-  
+  //   throw new AuthenticationError('You need to be logged in!');
+  // },
 };
 
 module.exports = resolvers;
