@@ -34,14 +34,16 @@ const AboutUs = () => (
       </div>
 
       <div className="custom-aboutus-content-create">
-        <h1 className="desc-text">Create Events</h1>
+        <h1 className="desc-text">SignUp Now</h1>
         <img src={arrow} alt="arrow" className="arrow-img" />
         <p className="small-parag">
-          Let others know about your event. Advertise your upcoming tech
-          conferences on our platform!
+        Signup to our platform to view the latest tech events across the globe and read user reviews!
         </p>
         <button type="button" className="custom-btn">
-          Add Event
+        <Link to="/signup" style={{color:"black"}}>
+          Signup
+          </Link>
+
         </button>
       </div>
     </div>

@@ -1,0 +1,24 @@
+.back-arrow{
+    margin-right:20px;
+
+}
+.tags-container-1{
+    margin-bottom:40px;
+}
+.tags-1{
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.7em;
+    color: var(--color-gold);
+    background-color: transparent;
+    border-width:0;
+    cursor: pointer;
+}
+.tags-section-1{
+    margin: 0 auto; 
+    margin-top:2rem;
+    text-align: center;
+} 

@@ -1,6 +1,7 @@
 import React from "react";
 import { QUERY_ALL_LOCATIONS } from '../../utils/queries';
 import { useQuery } from '@apollo/client';
+import { Link } from 'react-router-dom';
 
 const Locations = () => {
 
@@ -21,9 +22,14 @@ const Locations = () => {
             ) : (
               <>
       {locations&& 
-        locations.map((onelocation)=> (
+        locations.map((onelocation, j)=> (
               <>
-        <button className="tags">{onelocation.name}</button>
+        
+        <button className="tags" key={`${onelocation._id}-${j}`}>
+        <Link to={`/location/${onelocation._id}`}>
+          {onelocation.name}
+          </Link></button>
+        
         </>
               ))}
               </>

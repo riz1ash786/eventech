@@ -22,29 +22,20 @@ const typeDefs = gql`
     whyattend: String
     image: String
     price: Float
-    link:String
+    link: String
     location: Location
-    username: String
     comments: [Comment]!
-    likes: [like]!
-    likeCount: Int!
-    commentCount: Int!
-    profile: Profile
-  }
-
-  type like {
-    id: ID!
-    createdAt: String!
-    username: String!
+    commentCount: Int
+    likeCount: Int
   }
 
   type Comment {
-    _id: ID!
-    createdAt: String!
-    username: String!
-    body: String!
+    _id: ID
+    createdAt: String
+    author: String
+    body: String
   }
-  
+
   type Auth {
     token: ID!
     profile: Profile
@@ -54,7 +45,7 @@ const typeDefs = gql`
     # Because we have the context functionality in place to check a JWT and decode its data, we can use a query that will always find and return the logged in user's data
     me: Profile
     events: [Event]!
-    eventsByLocation(location: ID!, name: String): [Event]
+    eventsByLocation(location: ID!): [Event]
     event(eventId: ID!): Event
     locations: [Location]
   }
@@ -65,6 +56,9 @@ const typeDefs = gql`
     removeProfile: Profile
     saveEvent(eventId: ID!): Profile
     deleteSaved(eventId: ID!): Profile
-  }`;
+    createComment(eventId: ID!, body: String!): Event!
+    deleteComment(eventId: ID!, commentId: ID!): Event!
+  }
+`;
 
 module.exports = typeDefs;

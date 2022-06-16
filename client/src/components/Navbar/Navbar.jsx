@@ -1,4 +1,6 @@
 import React from 'react';
+import {useState, useParams, useNavigate } from "react-router-dom";
+
 import { CgClose } from 'react-icons/cg';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import eventech from '../../assets/eventech.png';
@@ -6,6 +8,8 @@ import './Navbar.css';
 import { Link } from "react-router-dom";
 import Auth from '../../utils/auth';
 import {AiOutlineHeart} from 'react-icons/ai';
+import { QUERY_SAVED_EVENTS } from "../../utils/queries";
+import { useQuery } from "@apollo/client";
 
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = React.useState(false);
@@ -13,7 +17,13 @@ const Navbar = () => {
     event.preventDefault();
     Auth.logout();
   };
-  return (
+  const { data, loading} = useQuery(QUERY_SAVED_EVENTS, {
+    fetchPolicy: "network-only",
+  });
+
+  return (loading ? (
+    <div>...Loading</div>
+  ) :
     <nav className="custom-navbar">
       {/* Logo */}
      
@@ -38,16 +48,6 @@ const Navbar = () => {
        
         {Auth.loggedIn() ? (
           <>
-
-
-         <Link to="/addevent">
-          <li className="small-parag">
-             <button className="logout-btn">
-               Add Event
-              </button>
-          </li>
-          </Link>
-
            <li className="small-parag">
              <button onClick={logout} className="logout-btn">
                Logout
@@ -55,14 +55,14 @@ const Navbar = () => {
           </li>
 
       <li className="small-parag heart">
-          <Link to="/interested">     
+          <Link to="/interested">
+          {/* {data.me.savedCount}      */}
         <AiOutlineHeart
           fontSize={35}
         /></Link> 
      </li>
    
-
-          </>
+       </>
         ):(
           <>
           <li className="small-parag">
@@ -101,29 +101,19 @@ const Navbar = () => {
               </li>
               {Auth.loggedIn() ? (
                 <>
-           
-                <Link to="/addevent">
-                 <li className="small-parag">
-                   <button className="logout-btn" onClick={()=>  setToggleMenu(false)}>
-                        Add Event
-                    </button>
+
+              <li className="small-parag">
+                   <Link to="/interested" onClick={()=>  setToggleMenu(false)}>     
+                  
+                     Favorites
+                     </Link> 
                  </li>
-                 </Link>
 
                  <li className="small-parag" onClick={logout}>
                    <button className="logout-btn" onClick={()=>  setToggleMenu(false)}>
                         Logout
                     </button>
                  </li>
-
-
-                 <li className="small-parag heart">
-                   <Link to="/interested" onClick={()=>  setToggleMenu(false)}>     
-                       <AiOutlineHeart
-                        fontSize={35}
-                     /></Link> 
-                 </li>
-
 
               </>
               ):(
@@ -141,6 +131,7 @@ const Navbar = () => {
         )}
       </div>
     </nav>
+
   );
 };
 

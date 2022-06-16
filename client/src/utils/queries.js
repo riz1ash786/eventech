@@ -28,6 +28,21 @@ export const QUERY_ALL_EVENTS = gql`
   }
 `;
 
+export const QUERY_EVENTS_BYLOCATION = gql`
+  query QUERY_EVENTS_BYLOCATION($location: ID!) {
+    eventsByLocation(location: $location) {
+      _id
+      title
+      link
+      image
+      location {
+        _id
+        name
+      }
+    }
+  }
+`;
+
 export const QUERY_SINGLE_EVENT = gql`
   query singleEvent($eventId: ID!) {
     event(eventId: $eventId) {
@@ -38,6 +53,13 @@ export const QUERY_SINGLE_EVENT = gql`
       image
       price
       link
+      likeCount
+      commentCount
+      comments {
+        _id
+        author
+        body
+      }
       location {
         _id
         name
@@ -58,6 +80,7 @@ export const QUERY_ALL_LOCATIONS = gql`
 export const QUERY_SAVED_EVENTS = gql`
   query QUERY_SAVED_EVENTS {
     me {
+      savedCount
       savedEvents {
         _id
         title
