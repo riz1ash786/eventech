@@ -15,6 +15,7 @@ import Signup from './pages/Signup/Signup.jsx';
 import Events from './pages/Events/Events.jsx';
 import SingleEvent from './pages/SingleEvent/SingleEvent.jsx';
 import Interested from './pages/Interested/Interested.jsx';
+import ByLocation from './pages/ByLocation/ByLocation.jsx';
 
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import './App.css';
@@ -71,6 +72,11 @@ const App = () => {
                 <Route 
                 path="/interested" 
                 element={<Interested />} 
+              />
+              
+                <Route 
+                path="/location/:locationId" 
+                element={<ByLocation />} 
               />
             </Routes>
           <Footer />

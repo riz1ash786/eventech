@@ -82,7 +82,7 @@ const SingleEvent = () => {
             <div className="interactions">
               <button>
                 {" "}
-                <BiLike /> 20- people interested{" "}
+                <BiLike /> {event.likeCount}- people interested{" "}
               </button>
               <button>
                 {" "}
@@ -122,10 +122,6 @@ const SingleEvent = () => {
                 </div>
               </div>
 ))}
-
-
-
-
 
             </div>
 

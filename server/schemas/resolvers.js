@@ -39,17 +39,11 @@ const resolvers = {
     locations: async () => {
       return await Location.find();
     },
-    eventsByLocation: async (parent, { location, name }) => {
+    eventsByLocation: async (parent, { location }) => {
       const params = {};
 
       if (location) {
         params.location = location;
-      }
-
-      if (name) {
-        params.name = {
-          $regex: name,
-        };
       }
 
       return await Event.find(params).populate("location");

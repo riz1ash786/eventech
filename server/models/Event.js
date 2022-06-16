@@ -42,12 +42,9 @@ const eventSchema = new Schema({
     name:String,
     createdAt:String,
   }],
-  likes:[
-    {
-    type: Schema.Types.ObjectId,
-    ref:'Profile'
-    }
-  ]
+  likeCount:{
+    type: Number,
+  }
 });
 
 eventSchema.virtual("commentCount").get(function () {

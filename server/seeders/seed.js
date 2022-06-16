@@ -29,6 +29,7 @@ db.once("open", async () => {
         link: "https://events.broad-group.com/event/a4ba77f1-52e2-4570-a6f5-d442cd3eca93/summary",
         location: locations[1]._id,
         price: 60,
+        likeCount: 56,
         comments: [
           {
             body: "Wow, this was a great experience, the location is amazing, and the conference does not disappoint! I will be going again next year!",
@@ -58,6 +59,7 @@ db.once("open", async () => {
         link: "https://www.iseurope.org/location-and-opening-hours/",
         location: locations[1]._id,
         price: 70,
+        likeCount: 88,
         comments: [
           {
             body: 
@@ -87,6 +89,7 @@ db.once("open", async () => {
         image: "tsia.png",
         link: "https://www.tsia.com/conference-pricing",
         price: 55,
+        likeCount: 91,
         comments: [
           {
             body: "I’ve been to a number of TSIA events in different locations, and I must say this one has been my favourite!!",
@@ -111,6 +114,7 @@ db.once("open", async () => {
         image: "computex.jpg",
         link: "https://computex.net/",
         price: 90,
+        likeCount: 73,
         comments: [
           {
             body: "A great event! Lots to do and free access is a bonus!            ",
@@ -134,6 +138,7 @@ db.once("open", async () => {
           "Hear from industry leaders on how to place resilience at the forefront of your cyber strategy and prepare for security challenges of the new normal.",
         image: "rsa.jpeg",
         price: 70,
+        likeCount: 29,
         comments: [
           {
             body: "I thought it was very informative!",
@@ -158,6 +163,7 @@ db.once("open", async () => {
           "At London Tech Week, there's something for everyone, with events on topics from AI and 5G to quantum computing, the future of work and more.",
         image: "london-tech-week.png",
         price: 80,
+        likeCount: 195,
         comments: [
           {
             body: "One of the best Technology conferences I’ve been to in a long time!",
@@ -182,6 +188,7 @@ db.once("open", async () => {
           " Hear from 200+ speakers and connect with 8,000 fellow attendees from 60+ countries. There will be more than 80 conference sessions across four stages, covering topics such as space tech, emerging tech, growth and much more!",
         image: "dublin.png",
         price: 85,
+        likeCount: 140,
         comments: [
           {
             body: "This event has really grown and improved from when I went a few years ago! ",
@@ -210,6 +217,7 @@ db.once("open", async () => {
           " Keynotes and learning sessions from special guests, demos, hands-on labs, and real-world use cases. There will be exclusive breakout rooms for in-person attendees, with keynote sessions available to attend virtually for free. In addition to cybersecurity and digital network experts, speakers will include Cloudflare’s CTO, John Graham-Cumming.",
         image: "cloudfare.jpg",
         price: 75,
+        likeCount: 14,
         comments: [
           {
             body: "Very informative but a little boring – the event lacked the excitement, maybe I was expecting too much?",
@@ -238,6 +246,7 @@ db.once("open", async () => {
           "In an industry characterised by constant change, it's vital to keep abreast of all the latest developments. Infosecurity Europe is designed to help you do just that.",
         image: "is.jpg",
         price: 60,
+        likeCount: 68,
         comments: [
           {
             body: "This was amazing! So much on offer and really cool people to meet! I’ve just finished University and it was very confident inspiring to see others doing so well in this field. I gained some great advice from the people I met!",
@@ -261,6 +270,7 @@ db.once("open", async () => {
           "Receive the latest information in security research, development and trends in a strictly vendor-neutral environment.",
         image: "black-hat.png",
         price: 80,
+        likeCount: 82,
         comments: [
           {
             body: "The event was not what I was expecting, I am not sure if I would go again – I wish there were more stands, and it could have lasted longer.",
@@ -289,6 +299,7 @@ db.once("open", async () => {
           "With many businesses avoiding the show last year due to the pandemic, it's possible IFA 2022 will yield a bumper crop of amazing and wacky tech.",
         image: "berlin.jpg",
         price: 90,
+        likeCount: 16,
         comments: [
           {
             body: "Fantastic, I went to this event to broaden my knowledge about the jobs market with the intention to meet people and grow my network! I managed to hand out my CV to quite a lot of people which was great!",
@@ -312,6 +323,7 @@ db.once("open", async () => {
           "You'll get access to conference programmes with over 1000 expert speakers, 4000 exhibitors and more than 200 government entities from 170 countries.",
         image: "gitex.png",
         price: 7.99,
+        likeCount: 73,
         comments: [
           {
             body: "Wow, what can I say surely the biggest and most impressive event I have been to! Dubai does not disappoint, the effort that the organisers have put it is amazing. Lots to learn, see and experience!",

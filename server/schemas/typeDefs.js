@@ -27,7 +27,7 @@ const typeDefs = gql`
     profile: Profile
     comments:[Comment]!
     commentCount: Int
-    likes:[Like]!
+    likeCount: Int
   }
   
   type Comment{
@@ -37,11 +37,6 @@ const typeDefs = gql`
     body: String
   }
 
-  type Like{
-    _id:ID
-    createdAt: String
-    name:String
-  }
 
   type Auth {
     token: ID!
@@ -52,7 +47,7 @@ const typeDefs = gql`
     # Because we have the context functionality in place to check a JWT and decode its data, we can use a query that will always find and return the logged in user's data
     me: Profile
     events: [Event]!
-    eventsByLocation(location: ID!, name: String): [Event]
+    eventsByLocation(location: ID!): [Event]
     event(eventId: ID!): Event
     locations: [Location]
   }
@@ -65,7 +60,6 @@ const typeDefs = gql`
     deleteSaved(eventId: ID!): Profile
     createComment(eventId:ID!, body:String!): Event!
     deleteComment(eventId: ID!, commentId: ID!): Event!
-    likePost(eventId: ID!): Event!
-  }`;
+    }`;
 
 module.exports = typeDefs;

@@ -19,5 +19,10 @@
 
 .bin{
   text-align: right;
+}
+
+.bin button{
+  background-color: transparent;
+  border-width:0;
   color: rgb(223, 59, 59);
 }
