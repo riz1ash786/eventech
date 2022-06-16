@@ -231,6 +231,262 @@ db.once("open", async () => {
         likeCount: 73,
         comments: [],
       },
+
+      // {
+      //   title: "Web Summit Lisbon",
+      //   location: locations[1]._id,
+      //   description:
+      //     "We’re a company from Dublin, Ireland, that holds events across the world: Web Summit in Lisbon, Web Summit Rio in Rio de Janeiro, Collision in Toronto, and RISE in Hong Kong.",
+      //   whyattend:
+      //     "Web Summit 2022 will bring together 70,000+ people, and the companies redefining the tech industry.",
+      //   image: "computex.jpg",
+      //   link: "https://websummit.com/tickets/attendees",
+      //   price: 495,
+      //   likeCount: 23,
+      //   comments: [
+      //       {
+      //           body:"The best technology conference on the planet according to Forbes and I agree! It waa great!",
+      //           name:"Jackie",
+      //           date:"16-02-2022"
+      //       },
+      //       {
+      //           body:"This show is THE place to be for all things #eventech. Highly recommended for exhibitors in the industry and attendees looking for the latest and greatest in event technology.",
+      //           name:"Monica",
+      //           date:"04-09-2021"
+      //   },
+      //   ],
+      // },
+      // {
+      //   title: "Event Technology Live",
+      //   location: locations[0]._id,
+      //   description:
+      //     "The World's Leading Event Technology Expos - London to Las Vegas",
+      //   whyattend:
+      //     "Event Technology Live is the only event portfolio dedicated to event technology that showcases digital, in-person and hybrid events.",
+      //   image: "computex.jpg",
+      //   link: "https://eventtechlive.com/membership-selection/",
+      //   price: 150,
+      //   likeCount: 88,
+      //   comments: [
+      //       {
+      //           body:"It was very interesting, hope I can make it again next year",
+      //           name:"Figo",
+      //           date:"16-02-2022"
+      //       },
+      //       {
+      //           body:"Friendly and helpful professionals who are happy to share their knowledge and experiences. It really benefited me!",
+      //           name:"Christiano",
+      //           date:"04-09-2021"
+      //   },
+      //   ],
+      // },
+      // {
+      //   title: "OpenText World EMEA",
+      //   location: locations[1]._id,
+      //   description:
+      //     "In a world of accelerated change and new ways for modern work, businesses rely on information management to stay ahead. Join us at OpenText World EMEA 2022 to discover more efficient, collaborative, and innovative solutions to solve today’s business challenges.",
+      //   whyattend:
+      //     "At OpenText, we obsess over driving innovation that can help you power and protect information across employees, customers, suppliers, and partners. That is why we’re here to help you discover how you can gain an information advantage.",
+      //   image: "computex.jpg",
+      //   link: "https://www.opentextworld.com/event/65ea7cf3-e6bc-4067-9b43-377cacc15d69/register?RefId=FY22-OTW-EMEA-PPC-textad-v2&gclid=CjwKCAjwqauVBhBGEiwAXOepkUS7z3j2I8MTXPdaXaguoYuCc8Y0LhKbVoTRAWB-c1y5a0MAVLxIUxoC58oQAvD_BwE",
+      //   price: 195,
+      //   likeCount: 28,
+      //   comments: [
+      //       {
+      //           body:"This conference could have been more interesting, the speaker panel was not great and I found myself wondering what I could gain from the event.",
+      //           name:"Robert",
+      //           date:"09-01-2022"
+      //       },
+      //       {
+      //           body:"Very enjoyable and a productive day out!",
+      //           name:"Kylian",
+      //           date:"12-05-2021"
+      //   },
+      //   ],
+      // },
+      // {
+      //   title: "IDC CIO Summit Bahrain",
+      //   location: locations[2]._id,
+      //   description:
+      //     "The IDC CIO Summit 2022 will explore Bahrain's changing technology landscape and present strategies that will help organizations evolve into digitally resilient enterprises and secure their rightful place in the 'Next Normal'.",
+      //   whyattend:
+      //     "The Bahrain CIO Summit 2022 features a tailored agenda filled with handpicked topics, discussions, panel sessions, and keynote presentations from regional and global technology experts that will explore all of today's hottest ICT issues.",
+      //   image: "computex.jpg",
+      //   link: "https://www.idc.com/mea/events/upcoming-events",
+      //   price: 275,
+      //   likeCount: 224,
+      //   comments: [
+      //       {
+      //           body:"A great eye opener and insight into future developments",
+      //           name:"Seyed",
+      //           date:"13-04-2022"
+      //       },
+      //       {
+      //           body:"It was a fantastic event to network and meet like minded professionals in the same field!",
+      //           name:"Fayed",
+      //           date:"13-04-2022"
+      //       },
+      //       {
+      //           body:"I decided to come here last minute and I am glad I did. The event has a lot to offer!",
+      //           name:"Idris",
+      //           date:"12-05-2021"
+      //   },
+      //   ],
+      // },
+      // {
+      //   title: "VMware Egypt Summit",
+      //   location: locations[2]._id,
+      //   description:
+      //     "Organizations across the country are embracing a digital-first approach in line with 'Digital Egypt', an all-encompassing vision and plan that lays the foundations for the transformation of Egypt into a digital society. ",
+      //   whyattend:
+      //     "This event will feature insights from IDC and VMware experts as they discuss how Egypt's organizations can benefit from the flexibility of a multicloud strategy, gain greater control over all their clouds, and advance toward their digital business goals while streamlining operations and maintaining enterprise control.",
+      //   image: "computex.jpg",
+      //   link: "https://meaevents.idc.com/event/4d189ecf-2f04-4e6b-b409-5e59ebf0f458/regProcessStep1",
+      //   price: 75,
+      //   likeCount: 47,
+      //   comments: [
+      //       {
+      //           body:"Very knowledgeable speaking panel, I will attend again next year to see how plans are progressing",
+      //           name:"Omar",
+      //           date:"30-11-2022"
+      //       },
+      //       {
+      //           body:"It was a great event, this is the third time I have been!",
+      //           name:"Mane",
+      //           date:"30-11-2022"
+      //       },
+      //       {
+      //           body:"As a domestic resident it is very exciting to see the technological plans being discussed for my country and worldwide development!",
+      //           name:"Hosni",
+      //           date:"17-08-2021"
+      //   },
+      //   ],
+      // },
+      // {
+      //   title: "IDC West Africa CIO Summit 2022",
+      //   location: locations[5]._id,
+      //   description:
+      //     "The IDC West Africa CIO Summit 2022 will explore the country's changing technology landscape and present strategies that will help organizations evolve into digitally resilient enterprises and secure their rightful place in the 'Next Normal'.",
+      //   whyattend:
+      //     "The IDC West Africa CIO Summit 2022 features a tailored agenda filled with handpicked topics, discussions, panel sessions, and keynote presentations from regional and global technology experts that will explore all of today's hottest ICT issues.",
+      //   image: "computex.jpg",
+      //   link: "https://www.idc.com/mea/events/69468-idc-west-africa-cio-summit-2022/proceedings",
+      //   price: 50,
+      //   likeCount: 137,
+      //   comments: [
+      //       {
+      //           body:"I have partnered with many tech events globally, by far this is my favorite!",
+      //           name:"Theresa",
+      //           date:"16-03-2022"
+      //       },
+      //       {
+      //           body:"The event has a lot to offer and never dissapoints!",
+      //           name:"Kashifu",
+      //           date:"26-08-2022"
+      //       },
+      //       {
+      //           body:"Last year I attended as a guest speaking to people to learn more about the field and this year I am hosting my own stand and looking forward to helping others!",
+      //           name:"Yemisi",
+      //           date:"19-02-2021"
+      //   },
+      //   ],
+      // },
+      // {
+      //   title: "SiGMA Americas - Sao Paulo",
+      //   location: locations[3]._id,
+      //   description:
+      //     "SiGMA Americas is heading to the buzzing metropolis of Sao Paolo in Brazil for the next edition of our world-renowned show, this time combining both the gaming and emerging tech industries under one roof. The event will take place on 13th – 14th September 2022 at the beautiful Tivoli Hotel.",
+      //   whyattend:
+      //     "As the fastest growing gaming market in the world, Latin America is the ideal backdrop for our bustling expo floor where the leading gaming and emerging tech innovators will showcase their wares. The conference will also bring together 150+ of the industry’s best-and-brightest minds to highlight the latest trends. Not to mention the plethora of networking events, where you can connect with like-minded professionals. ",
+      //   image: "computex.jpg",
+      //   link: "https://sigma.world/americas/#",
+      //   price: 120,
+      //   likeCount: 448,
+      //   comments: [
+      //       {
+      //           body:"It was my first time going and it was a brilliant experience",
+      //           name:"Rivaldo",
+      //           date:"18-08-2021"
+      //       },
+      //       {
+      //           body:"I enjoyed it for most part, it was too busy for my liking.",
+      //           name:"Cafu",
+      //           date:"26-08-2019"
+      //       },
+      //   ],
+      // },
+      // {
+      //   title: "XConf Singapore",
+      //   location: locations[4]._id,
+      //   description:
+      //     "our annual technology event created by technologists for technologists - is back in-person this year!",
+      //   whyattend:
+      //     "Join us at this one-day event to hear insightful talks from thought leaders and Thoughtworkers on topics including Data Mesh, Platform Thinking, Decentralized Identity, Accessible Tech, Responsible Tech, and much more",
+      //   image: "computex.jpg",
+      //   link: "https://www.eventbrite.sg/e/xconf-singapore-2022-tickets-327030586287",
+      //   price: 50,
+      //   likeCount: 513,
+      //   comments: [
+      //       {
+      //           body:"A super event with many interesting people and activities!",
+      //           name:"Adam",
+      //           date:"14-05-2022"
+      //       },
+      //       {
+      //           body:"I enjoyed it and so did my colleagues! We have made this an annual business day out!",
+      //           name:"Lee",
+      //           date:"02-12-2021"
+      //       },
+      //   ],
+      // },
+      // {
+      //   title: "SENSOR EXPO JAPAN 2022",
+      //   location: locations[4]._id,
+      //   description:
+      //     "our annual technology event created by technologists for technologists - is back in-person this year!",
+      //   whyattend:
+      //     "Join us at this one-day event to hear insightful talks from thought leaders and Thoughtworkers on topics including Data Mesh, Platform Thinking, Decentralized Identity, Accessible Tech, Responsible Tech, and much more",
+      //   image: "computex.jpg",
+      //   link: "https://www.bigsight.jp/english/organizer/value/",
+      //   price: 50,
+      //   likeCount: 513,
+      //   comments: [
+      //       {
+      //           body:"This was the best event I have been to, hihly recommended by myself and my friends",
+      //           name:"Haruki",
+      //           date:"09-05-2022"
+      //       },
+      //       {
+      //           body:"My employers sent me here and I was able to gain a lot of good information which will benefit our business moving forwards!",
+      //           name:"Yoko",
+      //           date:"04-04-2021"
+      //       },
+      //   ],
+      // },
+      // {
+      //   title: "Africa Tech Summit, Nairobi",
+      //   location: locations[5]._id,
+      //   description:
+      //     "Africa Tech Summit Nairobi connects tech leaders from the African ecosystem and international players under one roof.",
+      //   whyattend:
+      //     "Network with key stakeholders including tech corporates, mobile operators, fintechs, DeFi & crypto ventures, investors, leading start-ups, regulators and industry stakeholders driving business and investment forward. Following a sell out in 2022, the fifth edition convenes in Nairobi, Kenya.",
+      //   image: "computex.jpg",
+      //   link: "https://www.africatechsummit.com/nairobi/register/",
+      //   price: 60,
+      //   likeCount: 203,
+      //   comments: [
+      //       {
+      //           body:"In my opinion this is th best tech event in Africa, if not the whole world! Amazing!",
+      //           name:"Njoroge",
+      //           date:"19-07-2021"
+      //       },
+      //       {
+      //           body:"I enjoyed attending this tech summit, it was a great insight into both personal and business developments.",
+      //           name:"Hugo",
+      //           date:"07-06-2021"
+      //       },
+      //   ],
+      // },
     ]);
 
     console.log("events seeded");
