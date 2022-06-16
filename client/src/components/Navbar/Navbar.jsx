@@ -56,7 +56,7 @@ const Navbar = () => {
 
       <li className="small-parag heart">
           <Link to="/interested">
-          {data.me.savedCount}     
+          {/* {data.me.savedCount}      */}
         <AiOutlineHeart
           fontSize={35}
         /></Link> 
@@ -114,10 +114,6 @@ const Navbar = () => {
                         Logout
                     </button>
                  </li>
-
-
-           
-
 
               </>
               ):(
