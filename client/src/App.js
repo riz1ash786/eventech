@@ -55,10 +55,7 @@ const App = () => {
             <Route path="/events/:eventId" element={<SingleEvent />} />
             <Route path="/interested" element={<Interested />} />
 
-            {/* <Route 
-                path="/location/:locationId" 
-                element={<ByLocation />} 
-              /> */}
+            <Route path="/location/:locationId" element={<ByLocation />} />
           </Routes>
           <Footer />
         </div>
