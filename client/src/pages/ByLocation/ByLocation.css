@@ -8,12 +8,12 @@
 .tags-1{
     box-sizing: border-box;
     font-family: 'Raleway', sans-serif;
-    /* font-size: 14px;
+    font-size: 14px;
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.7em;
     color: var(--color-gold);
-    background-color: transparent; */
+    background-color: transparent;
     border-width:0;
     cursor: pointer;
 }
