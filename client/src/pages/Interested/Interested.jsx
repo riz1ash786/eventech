@@ -11,18 +11,36 @@ import { Link } from "react-router-dom";
 import { MdDeleteOutline } from "react-icons/md";
 
 const Interested = () => {
-  //const { eventId } = useParams();
+  const { data, loading: savedEventsLoading } = useQuery(QUERY_SAVED_EVENTS, {
+    // If updating the cache doesn't work - this is why
+    fetchPolicy: "network-only",
+  });
 
-  const [deleteSaved, { loading: deleteSavedLoading }] =
-    useMutation(DELETE_SAVED);
-  const handleDeleteSaved = async (event) => {
-    console.log("hello");
-    const eventId = event.target.getAttribute('data-event-id')
-    console.log(`Event ID: ${eventId}`);
+  const [deleteSaved, { loading: deleteSavedLoading }] = useMutation(
+    DELETE_SAVED,
+    {
+      update: (cache, { data }) => {
+        const existing = cache.readQuery({ query: QUERY_SAVED_EVENTS });
+
+        cache.writeQuery({
+          query: QUERY_SAVED_EVENTS,
+          data: {
+            ...existing,
+            me: {
+              ...existing.me,
+              savedEvents: [...data.deleteSaved.savedEvents],
+            },
+          },
+        });
+      },
+    }
+  );
+
+  const handleDeleteSaved = async (eventId) => {
     try {
       var response = await deleteSaved({
         variables: {
-          eventId: eventId,
+          eventId,
         },
       });
     } catch (error) {
@@ -32,9 +50,6 @@ const Interested = () => {
     }
   };
 
-  const { data, loading: savedEventsLoading } = useQuery(QUERY_SAVED_EVENTS, {
-    fetchPolicy: "network-only",
-  });
   const loading = savedEventsLoading || deleteSavedLoading;
   useEffect(() => {
     console.log("The component mounted");
@@ -78,7 +93,7 @@ const Interested = () => {
 
               <div className="bin">
                 <button
-                  onClick={handleDeleteSaved}
+                  onClick={() => handleDeleteSaved(savedEvent._id)}
                   data-event-id={savedEvent._id}
                 >
                   <MdDeleteOutline fontSize={40} />

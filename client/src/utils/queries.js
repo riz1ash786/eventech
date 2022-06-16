@@ -34,6 +34,7 @@ export const QUERY_EVENTS_BYLOCATION = gql`
       _id
       title
       link
+      image
       location {
         _id
         name
@@ -56,8 +57,7 @@ export const QUERY_SINGLE_EVENT = gql`
       commentCount
       comments {
         _id
-        name
-        createdAt
+        author
         body
       }
       location {

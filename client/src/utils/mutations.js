@@ -34,12 +34,23 @@ export const SAVE_EVENT = gql`
   }
 `;
 
-
 export const DELETE_SAVED = gql`
   mutation deleteSaved($eventId: ID!) {
     deleteSaved(eventId: $eventId) {
       savedEvents {
         _id
+      }
+    }
+  }
+`;
+
+export const SAVE_COMMENT = gql`
+  mutation SAVE_COMMENT($eventId: ID!, $body: String!) {
+    createComment(eventId: $eventId, body: $body) {
+      _id
+      comments{
+        body
+        author
       }
     }
   }

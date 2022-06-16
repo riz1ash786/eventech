@@ -2,20 +2,39 @@ import React, { useEffect } from "react";
 import { useState, useParams, useNavigate } from "react-router-dom";
 import Auth from "../../utils/auth.js";
 import { QUERY_SINGLE_EVENT } from "../../utils/queries";
-import { SAVE_EVENT } from "../../utils/mutations";
+import { SAVE_COMMENT, SAVE_EVENT } from "../../utils/mutations";
 import { useMutation } from "@apollo/client";
 import { useQuery } from "@apollo/client";
 import { Link } from "react-router-dom";
 import { BiLike } from "react-icons/bi";
 import { FaRegComments } from "react-icons/fa";
 import "./SingleEvent.css";
-import {BsFillChatDotsFill} from "react-icons/bs"
+import { BsFillChatDotsFill } from "react-icons/bs";
+import { MdDeleteOutline } from "react-icons/md";
+
 const SingleEvent = () => {
   const { eventId } = useParams();
   const { loading: getEventsLoading, data } = useQuery(QUERY_SINGLE_EVENT, {
     variables: { eventId: eventId },
   });
   const [saveEvent, { loading: saveEventLoading }] = useMutation(SAVE_EVENT);
+  const [saveComment, { loading: saveCommentLoading }] =
+    useMutation(SAVE_COMMENT);
+    //  {
+    //    update: (cache,{data}) => {
+    //      const existing = cache.readQuery({ query: QUERY_SINGLE_EVENT});
+    //      cache.writeQuery({
+    //        query: QUERY_SINGLE_EVENT,
+    //        data:{
+    //          ...existing,
+    //         event: {
+    //           ...existing.event,
+
+    //         }
+    //        }
+    //      })
+    //    }
+    //  }
   const navigate = useNavigate();
 
   const event = data?.event || {};
@@ -35,6 +54,21 @@ const SingleEvent = () => {
       },
     });
     window.location.reload(true);
+  };
+
+  const handleSubmitComment = (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(e.target);
+
+    saveComment({
+      variables: {
+        eventId,
+        body: formData.get("comment"),
+      },
+    });
+
+    e.target.reset();
   };
 
   return loading ? (
@@ -89,8 +123,6 @@ const SingleEvent = () => {
                 <FaRegComments /> {event.commentCount} - join discussion below{" "}
               </button>
             </div>
-
- 
           </div>
         </div>
       </div>
@@ -102,38 +134,46 @@ const SingleEvent = () => {
               <h4 className="card-title">Latest Comments</h4>
             </div>
             <div className="comment-widgets">
-
-        {event.comments.map((comments)=> (
-
-              <div className="d-flex flex-row comment-row">
-                <div className="p-2"></div>
-                <div className="comment-text active w-100">
-                  <h6 className="font-medium"><BsFillChatDotsFill className="chat-icon"/> {comments.name}</h6>{" "}
-                  <span className="m-b-15 d-block">
-                  {comments.body}{" "}
-                  </span>
-                  <div className="comment-footer">
-                    {" "}
-                    <span className="text-muted float-right">
-                    {comments.createdAt}
-                    </span>{" "}
-
+              {event.comments.map((comment) => (
+                <div className="d-flex flex-row comment-row">
+                  <div className="p-2"></div>
+                  <div className="comment-text active w-100">
+                    <h6 className="font-medium">
+                      <BsFillChatDotsFill className="chat-icon" />{" "}
+                      {comment.author}
+                    </h6>{" "}
+                    <span className="m-b-15 d-block">{comment.body} </span>
+                    <div className="comment-footer">
+                      {" "}
+                      <span className="text-muted float-right">
+                        {comment.createdAt}
+                      </span>{" "}
+                    </div>
+                    <div className="bin">
+                      <button>
+                        <MdDeleteOutline fontSize={20} />
+                      </button>
+                    </div>
                   </div>
                 </div>
-              </div>
-))}
-
+              ))}
             </div>
 
-         <div className="container">
-            <form>
+            <div className="container">
+              <form onSubmit={handleSubmitComment}>
                 <div className="form-group">
-                      <textarea className="form-control status-box" rows="3" placeholder="Enter your comment here..."></textarea>
-               </div>
-                <button href="#" className="btn btn-primary post-btn">Post Comment</button>
-
-            </form>
-          </div>
+                  <textarea
+                    name="comment"
+                    className="form-control status-box"
+                    rows="3"
+                    placeholder="Enter your comment here..."
+                  ></textarea>
+                </div>
+                <button type="submit" className="btn btn-primary post-btn">
+                  Post Comment
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </div>
