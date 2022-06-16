@@ -25,9 +25,9 @@ const Locations = () => {
         locations.map((onelocation, j)=> (
               <>
         
-        {/* <button className="tags" key={`${onelocation._id}-${j}`}>
+        <button className="tags" key={`${onelocation._id}-${j}`}>
         <Link to={`/location/${onelocation._id}`}>
-          {onelocation.name} */}
+          {onelocation.name}
           </Link></button>
         
         </>
