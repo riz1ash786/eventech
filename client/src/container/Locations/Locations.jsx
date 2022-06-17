@@ -4,9 +4,9 @@ import { useQuery } from '@apollo/client';
 import { Link } from 'react-router-dom';
 
 const Locations = () => {
-
+    // query all locations
     const { loading, data } = useQuery(QUERY_ALL_LOCATIONS);
-      const locations = data?.locations || [];
+    const locations = data?.locations || [];
   
       if (!locations.length) {
           return <h3>No Events Yet</h3>;

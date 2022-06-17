@@ -10,7 +10,6 @@ import event2 from "../../assets/event2.png";
 import event3 from "../../assets/event3.png";
 import event4 from "../../assets/event4.png";
 import "./Slides.css";
-import { Link } from 'react-router-dom';
 
 const Slides = () => {
   const scrollingRef = React.useRef(null);

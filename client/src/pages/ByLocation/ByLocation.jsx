@@ -9,15 +9,13 @@ import "./ByLocation.css";
 
 const ByLocation = () => {
   const { locationId } = useParams();
-
+  // filter events by location using QUERY_EVENTS_BYLOCATION
   const { loading, data } = useQuery(QUERY_EVENTS_BYLOCATION, {
     variables: { location: locationId },
   });
 
   const events = data?.eventsByLocation || [];
-  // if (!events.length) {
-  //     return <h3>No Events Yet</h3>;
-  //   }
+
   return (
     <div>
       <section className="tags-section-1">
