@@ -21,8 +21,10 @@ const Footer = () => (
         </p>
         <img src={arrow} className="arrow-img" style={{ marginTop: 15 }} />
         <div className="custom-footer-links-icons">
-          <AiFillGithub />
-          <AiFillLinkedin />
+          <a href="https://github.com/riz1ash786/eventech">   <AiFillGithub /></a>
+          <a href="https://www.linkedin.com/"> <AiFillLinkedin /></a>
+        
+          
         </div>
       </div>
     </div>

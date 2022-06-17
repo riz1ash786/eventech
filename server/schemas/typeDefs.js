@@ -26,12 +26,10 @@ const typeDefs = gql`
     location: Location
     comments: [Comment]!
     commentCount: Int
-    likeCount: Int
   }
 
   type Comment {
     _id: ID
-    createdAt: String
     author: String
     body: String
   }

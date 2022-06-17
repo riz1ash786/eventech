@@ -53,7 +53,6 @@ export const QUERY_SINGLE_EVENT = gql`
       image
       price
       link
-      likeCount
       commentCount
       comments {
         _id

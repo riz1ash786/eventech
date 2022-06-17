@@ -4,12 +4,11 @@ import { QUERY_ALL_EVENTS } from '../../utils/queries';
 import Locations from "../../container/Locations/Locations.jsx"
 import "./Events.css";
 import { Link } from 'react-router-dom';
-import {AiOutlineHeart} from 'react-icons/ai';
 
 const Events = () => {
+  // Query to get all events from seeds
     const { loading, data } = useQuery(QUERY_ALL_EVENTS);
     const events = data?.events || [];
-
     if (!events.length) {
         return <h3>No Events Yet</h3>;
       }

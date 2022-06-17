@@ -1,6 +1,4 @@
 import React from 'react';
-import {useState, useParams, useNavigate } from "react-router-dom";
-
 import { CgClose } from 'react-icons/cg';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import eventech from '../../assets/eventech.png';
@@ -12,11 +10,14 @@ import { QUERY_SAVED_EVENTS } from "../../utils/queries";
 import { useQuery } from "@apollo/client";
 
 const Navbar = () => {
+  //menu for small screens
   const [toggleMenu, setToggleMenu] = React.useState(false);
+  // logout
   const logout = (event) => {
     event.preventDefault();
     Auth.logout();
   };
+  // saved count
   const { data, loading} = useQuery(QUERY_SAVED_EVENTS, {
     fetchPolicy: "network-only",
   });
@@ -56,7 +57,7 @@ const Navbar = () => {
 
       <li className="small-parag heart">
           <Link to="/interested">
-          {/* {data.me.savedCount}      */}
+          {data.me.savedCount}     
         <AiOutlineHeart
           fontSize={35}
         /></Link> 

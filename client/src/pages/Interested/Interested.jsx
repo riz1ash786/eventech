@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { useState, useParams, useNavigate } from "react-router-dom";
 import "./Interested.css";
 import "../Events/Events.css";
 import { useQuery } from "@apollo/client";
@@ -29,6 +28,7 @@ const Interested = () => {
             me: {
               ...existing.me,
               savedEvents: [...data.deleteSaved.savedEvents],
+              savedCount: data.savedCount,
             },
           },
         });
