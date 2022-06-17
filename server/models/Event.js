@@ -31,18 +31,12 @@ const eventSchema = new Schema(
     link: {
       type: String,
     },
-    createdAt: {
-      type: String,
-    },
     comments: [
       {
         body: String,
         author: String,
       },
-    ],
-    likeCount: {
-      type: Number,
-    },
+    ]
   },
   { timestamps: true }
 );

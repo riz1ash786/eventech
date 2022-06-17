@@ -27,6 +27,7 @@ export const LOGIN_USER = gql`
 export const SAVE_EVENT = gql`
   mutation saveEvent($eventId: ID!) {
     saveEvent(eventId: $eventId) {
+      savedCount
       savedEvents {
         _id
       }
@@ -37,6 +38,7 @@ export const SAVE_EVENT = gql`
 export const DELETE_SAVED = gql`
   mutation deleteSaved($eventId: ID!) {
     deleteSaved(eventId: $eventId) {
+      savedCount
       savedEvents {
         _id
       }

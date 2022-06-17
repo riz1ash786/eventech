@@ -141,6 +141,7 @@ const resolvers = {
     },
   },
 
+  // Should implement delete comment 
   // deleteComment: async (parent, { comment, eventId }, context) => {
   //   if (context.user) {
   //     return Event.findOneAndUpdate(

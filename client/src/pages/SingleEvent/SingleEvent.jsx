@@ -1,51 +1,36 @@
 import React, { useEffect } from "react";
-import { useState, useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import Auth from "../../utils/auth.js";
 import { QUERY_SINGLE_EVENT } from "../../utils/queries";
 import { SAVE_COMMENT, SAVE_EVENT } from "../../utils/mutations";
 import { useMutation } from "@apollo/client";
 import { useQuery } from "@apollo/client";
 import { Link } from "react-router-dom";
-import { BiLike } from "react-icons/bi";
 import { FaRegComments } from "react-icons/fa";
 import "./SingleEvent.css";
 import { BsFillChatDotsFill } from "react-icons/bs";
-import { MdDeleteOutline } from "react-icons/md";
 
 const SingleEvent = () => {
+  // query single event
   const { eventId } = useParams();
   const { loading: getEventsLoading, data } = useQuery(QUERY_SINGLE_EVENT, {
     variables: { eventId: eventId },
   });
+  //mutation save event
   const [saveEvent, { loading: saveEventLoading }] = useMutation(SAVE_EVENT);
   const [saveComment, { loading: saveCommentLoading }] =
     useMutation(SAVE_COMMENT);
-    //  {
-    //    update: (cache,{data}) => {
-    //      const existing = cache.readQuery({ query: QUERY_SINGLE_EVENT});
-    //      cache.writeQuery({
-    //        query: QUERY_SINGLE_EVENT,
-    //        data:{
-    //          ...existing,
-    //         event: {
-    //           ...existing.event,
-
-    //         }
-    //        }
-    //      })
-    //    }
-    //  }
   const navigate = useNavigate();
 
   const event = data?.event || {};
   const loading = getEventsLoading || saveEventLoading;
-
+  //auth
   useEffect(() => {
     if (!Auth.loggedIn()) {
       navigate("/login");
     }
   }, []);
-
+  //handle save event
   const handleSaveEvent = async () => {
     // debugger;
     saveEvent({
@@ -55,7 +40,7 @@ const SingleEvent = () => {
     });
     window.location.reload(true);
   };
-
+  //handle submit comment
   const handleSubmitComment = (e) => {
     e.preventDefault();
 
@@ -114,13 +99,10 @@ const SingleEvent = () => {
             </button>
 
             <div className="interactions">
+
               <button>
                 {" "}
-                <BiLike /> {event.likeCount}- people interested{" "}
-              </button>
-              <button>
-                {" "}
-                <FaRegComments /> {event.commentCount} - join discussion below{" "}
+                <FaRegComments /> {event.commentCount} - Let us know what you think about this event below{" "}
               </button>
             </div>
           </div>
@@ -143,17 +125,8 @@ const SingleEvent = () => {
                       {comment.author}
                     </h6>{" "}
                     <span className="m-b-15 d-block">{comment.body} </span>
-                    <div className="comment-footer">
-                      {" "}
-                      <span className="text-muted float-right">
-                        {comment.createdAt}
-                      </span>{" "}
-                    </div>
-                    <div className="bin">
-                      <button>
-                        <MdDeleteOutline fontSize={20} />
-                      </button>
-                    </div>
+      
+               
                   </div>
                 </div>
               ))}
