@@ -1,70 +1,155 @@
-# Getting Started with Create React App
+# EvenTech
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of contents
 
-## Available Scripts
+- [Description](#description)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Technologies and Languages](#technologies-and-languages)
+- [Contributing](#contributing)
+- [Tests](#tests)
+- [License](#license)
+- [Screenshot](#screenshot)
+- [Deployed application](#deployed-application)
+- [GitHub repository](#github-repository)
+- [Questions](#questions)
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## Description
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+As a team we have been tasked to conceive and execute a design that solves a real-world problem. In creating our first collaborative MERN stack single-page application, we have combined a scalable MongoDB back end, a GraphQL API, and an Express.js and Node.js server with a React front end, implementing user authentication with JWT to build a user-focused platform. We’ll continue to build on the agile development methodologies we’ve used throughout this course. These include storing our project code in GitHub, managing our work with a project management tool, and implementing feature and bug fixes using the Git branch workflow and pull requests.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Start with cloning this repository link on to your local machine:
 
-### `npm run build`
+```
+$ git clone https://github.com/riz1ash786/eventech
+$ cd eventech
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+To install the required dependencies and set up the application, run:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+$ npm i
+$ npm run seed
+$ npm run develop
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## Usage
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Enter `npm run develop` in terminal to start the application. Once a port has been presented in terminal then type `localhost:3000` into browser to display the application locally and to access apollo server use `localhost:3001/graphql`. Alternatively, if you wish to deploy this application on Heroku then please use the link provided in the 'Deployed Application' section listed below.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Technologies and Languages
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+<div>
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" title="React" alt="React" width="50" height="50"/>&nbsp;
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/npm/npm-original-wordmark.svg" title="npm" alt="npm" width="50" height="50"/>&nbsp;
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-original.svg" title="Bootstrap" alt="Bootstrap" width="50" height="50"/>&nbsp;
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg" title="MongoDB" alt="MongoDB" width="50" height="50"/>&nbsp;
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/graphql/graphql-plain-wordmark.svg" title="GraphQL" alt="GraphQL" width="50" height="50"/>&nbsp;
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/webpack/webpack-original.svg" title="Webpack" alt="Webpack" width="50" height="50"/>&nbsp;
+<img src="https://cdn.freebiesupply.com/logos/large/2x/nodemon-logo-png-transparent.png" title="Nodemon" alt="Nodemon" width="50" height="50"/>&nbsp;
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" title="NodeJS" alt="NodeJS" width="60" height="60"/>&nbsp;
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/heroku/heroku-original-wordmark.svg" title="Heroku" alt="Heroku" width="50" height="50"/>&nbsp;
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg" title="CSS3" alt="CSS" width="50" height="50"/>&nbsp;
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" title="HTML5" alt="HTML" width="50" height="50"/>&nbsp;
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" title="JavaScript" alt="JavaScript" width="50" height="50"/>&nbsp;
 
-## Learn More
+</div>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=riz1ash786&layout=compact&theme=vision-friendly-dark)](https://github.com/riz1ash786/github-readme-stats)
 
-### Code Splitting
+## Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+<div id="badges">
+  <a href="https://github.com/NadineMohsen">
+    <img src="https://img.shields.io/badge/profile-NADINE MOHSEN-red?style=for-the-badge&logo=GITHUB&logoColor=white" alt="Nadine Github"/>
+  </a> <br />
+  <a href="https://github.com/riz1ash786">
+    <img src="https://img.shields.io/badge/profile-RIZWAN ASHRAF-blue?style=for-the-badge&logo=GITHUB&logoColor=white" alt="Rizwan Github"/>
+  </a> <br />
+  <a href="https://github.com/JosephCurtis1999">
+    <img src="https://img.shields.io/badge/profile-JOE CURTIS-success?style=for-the-badge&logo=GITHUB&logoColor=white" alt="Joe Github"/>
+  </a>
+</div>
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Tests
 
-### Making a Progressive Web App
+No tests have been specified for this application as of yet.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+![License (ISC](https://img.shields.io/badge/License-ISC-brightgreen?style=plastic&logo=appveyor.svg) <br />
+This application utilises the [ISC License](https://opensource.org/licenses/ISC "License Link")
 
-### Deployment
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Screenshot
 
-### `npm run build` fails to minify
+![Homepage](readme-images/homepage.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![Events](readme-images/events.png)
+
+![Signup](readme-images/signup.png)
+
+![Saved Events](readme-images/saved-events.png)
+
+![Event Details](readme-images/details.png)
+
+![Comments](readme-images/comments.png)
+
+![Mobile View 1](readme-images/mobile-view-1.png)
+
+![Mobile View 2](readme-images/mobile-view-2.png)
+
+---
+
+## Deployed Application
+
+<div id="badges">
+  <a href="https://eventech-app.herokuapp.com/">
+    <img src="https://img.shields.io/badge/heroku-EvenTech-blue?style=for-the-badge&logo=HEROKU&logoColor=white" alt="Eventech Heroku Link"/>
+  </a>
+</div>
+
+---
+
+## GitHub Repository
+
+<div id="badges">
+  <a href="https://github.com/riz1ash786/eventech">
+    <img src="https://img.shields.io/badge/Repository-EVENTECH-blue?style=for-the-badge&logo=GITHUB&logoColor=white" alt="EVENTECH Repository"/>
+  </a>
+</div>
+
+---
+
+## Questions
+
+If you have any additional questions, then please feel free to get in touch via our email details linked below. Thank you.
+
+<div id="badges">
+  <a href="mailto:riz1ash786@gmail.com">
+    <img src="https://img.shields.io/badge/EMAIL-RIZWAN ASHRAF-blue?style=for-the-badge&logo=GOOGLE&logoColor=white" alt="Rizwan Email"/>
+  </a> <br />
+  <a href="mailto:Nadine.mohsen@hotmail.com">
+    <img src="https://img.shields.io/badge/EMAIL-NADINE MOHSEN-red?style=for-the-badge&logo=GOOGLE&logoColor=white" alt="Nadine Email"/>
+  </a> <br />
+  <a href="mailto:joecurtis9999@gmail.com">
+    <img src="https://img.shields.io/badge/EMAIL-JOE CURTIS-success?style=for-the-badge&logo=GOOGLE&logoColor=white" alt="Joe Email"/>
+  </a>
+</div>
